@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import AddEmployee from './AddEmployee';
+import Collapse from './collapsetest';
 
 class App extends Component {
   render() {
@@ -16,6 +17,9 @@ class App extends Component {
             Approval Matrix
           </a>
         </nav>
+        <div className="container-fluid mt-5">
+          <Collapse />
+        </div>
         <div className="container-fluid mt-5">
           <AddEmployee />
         </div>
