@@ -16,12 +16,57 @@
           "type": "uint256"
         }
       ],
-      "name": "EmployeeMatrix",
+      "name": "employee",
       "outputs": [
         {
-          "internalType": "address",
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "int256",
+          "name": "account",
+          "type": "int256"
+        },
+        {
+          "internalType": "string",
+          "name": "EmployeeName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "EmployeeEmail",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "EmployeeRole",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "EmployeeMaxBaget",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "voteCount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "employeeCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
           "name": "",
-          "type": "address"
+          "type": "uint256"
         }
       ],
       "payable": false,
@@ -57,53 +102,23 @@
       "payable": false,
       "stateMutability": "view",
       "type": "function"
-    },
-    {
-      "constant": false,
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "account",
-          "type": "uint256"
-        },
-        {
-          "internalType": "string",
-          "name": "EmployeeName",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "EmployeeEmail",
-          "type": "string"
-        },
-        {
-          "internalType": "string",
-          "name": "EmployeeRole",
-          "type": "string"
-        }
-      ],
-      "name": "AddEmployee",
-      "outputs": [],
-      "payable": false,
-      "stateMutability": "nonpayable",
-      "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"account\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"EmployeeName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"EmployeeEmail\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"EmployeeRole\",\"type\":\"string\"}],\"name\":\"AddEmployee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"EmployeeMatrix\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/tanpao/dev/Blockchain/ApprovalMatrix/src/contracts/ApprovalMatrix.sol\":\"ApprovalMatrix\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/tanpao/dev/Blockchain/ApprovalMatrix/src/contracts/ApprovalMatrix.sol\":{\"keccak256\":\"0xdcd8d74d4d8c5898ba627010a35ad4014c00d1e3af57262b1a968a603fcf8344\",\"urls\":[\"bzz-raw://4544bf7ebd815749ab222e4fa45cc938c9ccf684d211da24ee45aa3bd652610a\",\"dweb:/ipfs/QmaRGMK87ni6dCvctwGqJuVj61nccU2PgHLjSDezwQ483y\"]}},\"version\":1}",
-  "bytecode": "0x60806040526040518060400160405280600e81526020017f417070726f76616c4d61747269780000000000000000000000000000000000008152506000908051906020019061004f9291906100a3565b5034801561005c57600080fd5b5033600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610148565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100e457805160ff1916838001178555610112565b82800160010185558215610112579182015b828111156101115782518255916020019190600101906100f6565b5b50905061011f9190610123565b5090565b61014591905b80821115610141576000816000905550600101610129565b5090565b90565b61057d806101576000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806306fdde03146100515780636ba3156a146100d45780637524f37f146101425780638da5cb5b14610335575b600080fd5b61005961037f565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009957808201518184015260208101905061007e565b50505050905090810190601f1680156100c65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610100600480360360208110156100ea57600080fd5b810190808035906020019092919050505061041d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6103336004803603608081101561015857600080fd5b81019080803590602001909291908035906020019064010000000081111561017f57600080fd5b82018360208201111561019157600080fd5b803590602001918460018302840111640100000000831117156101b357600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561021657600080fd5b82018360208201111561022857600080fd5b8035906020019184600183028401116401000000008311171561024a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001906401000000008111156102ad57600080fd5b8201836020820111156102bf57600080fd5b803590602001918460018302840111640100000000831117156102e157600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610459565b005b61033d610522565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104155780601f106103ea57610100808354040283529160200191610415565b820191906000526020600020905b8154815290600101906020018083116103f857829003601f168201915b505050505081565b6002818154811061042a57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b3373ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461051c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f796f7520617265206e6f7420746865206f776e6572000000000000000000000081525060200191505060405180910390fd5b50505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a72315820e3d330d8043cfe04181b2e149eb6117dec8e1a639572ea398f8b087df996bf6964736f6c63430005100032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806306fdde03146100515780636ba3156a146100d45780637524f37f146101425780638da5cb5b14610335575b600080fd5b61005961037f565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009957808201518184015260208101905061007e565b50505050905090810190601f1680156100c65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b610100600480360360208110156100ea57600080fd5b810190808035906020019092919050505061041d565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6103336004803603608081101561015857600080fd5b81019080803590602001909291908035906020019064010000000081111561017f57600080fd5b82018360208201111561019157600080fd5b803590602001918460018302840111640100000000831117156101b357600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019064010000000081111561021657600080fd5b82018360208201111561022857600080fd5b8035906020019184600183028401116401000000008311171561024a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001906401000000008111156102ad57600080fd5b8201836020820111156102bf57600080fd5b803590602001918460018302840111640100000000831117156102e157600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610459565b005b61033d610522565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104155780601f106103ea57610100808354040283529160200191610415565b820191906000526020600020905b8154815290600101906020018083116103f857829003601f168201915b505050505081565b6002818154811061042a57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b3373ffffffffffffffffffffffffffffffffffffffff16600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff161461051c576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260158152602001807f796f7520617265206e6f7420746865206f776e6572000000000000000000000081525060200191505060405180910390fd5b50505050565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a72315820e3d330d8043cfe04181b2e149eb6117dec8e1a639572ea398f8b087df996bf6964736f6c63430005100032",
-  "sourceMap": "25:963:0:-;;;51:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;550:56;8:9:-1;5:2;;;30:1;27;20:12;5:2;550:56:0;589:10;581:5;;:18;;;;;;;;;;;;;;;;;;25:963;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "25:963:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:963:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;51:38;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;51:38:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;114:31;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;114:31:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;609:375;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;609:375:0;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;609:375:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;609:375:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;609:375:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;609:375:0;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;609:375:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;609:375:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;609:375:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;609:375:0;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;609:375:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;609:375:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;609:375:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;609:375:0;;;;;;;;;;;;;;;:::i;:::-;;91:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;51:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;114:31::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;609:375::-;755:10;746:19;;:5;;;;;;;;;;;:19;;;738:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;609:375;;;;:::o;91:20::-;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\n\ncontract ApprovalMatrix {\nstring  public name = \"ApprovalMatrix\";\naddress public owner;\n\naddress[] public EmployeeMatrix;\n/*mapping(address => uint) public account;\nmapping(address => string) public EmployeeName;\nmapping(address => string) public EmployeeEmail;\nmapping(address => string) public EmployeeRole;\nmapping(address => uint256) public EmployeeMaxBaget; */\n\n\n/*event AddEmployee(\n\t    address account,\n\t    string EmployeeName,\n\t    string EmployeeEmail,\n\t    string EmployeeRole,\n\t    uint maxBagetApprove \n\n); */\n\nconstructor() public {\n        owner = msg.sender;\n    }\n\n\nfunction AddEmployee(uint account, string memory EmployeeName, string memory EmployeeEmail, string memory EmployeeRole) public {\nrequire(owner == msg.sender, \"you are not the owner\");\n/*\n\tEmployeeMatrix.push(\n                account,\n                EmployeeName,\n                EmployeeEmail,\n                EmployeeRole,\n                msg.value\n            \n    ); */\n}\n\n\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"employee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"int256\",\"name\":\"account\",\"type\":\"int256\"},{\"internalType\":\"string\",\"name\":\"EmployeeName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"EmployeeEmail\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"EmployeeRole\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"EmployeeMaxBaget\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"voteCount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"employeeCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/tanpao/dev/Blockchain/ApprovalMatrix/src/contracts/ApprovalMatrix.sol\":\"ApprovalMatrix\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/tanpao/dev/Blockchain/ApprovalMatrix/src/contracts/ApprovalMatrix.sol\":{\"keccak256\":\"0x703efd49f9b21a925c86bb88ad9dce9930346eff442226f0cd79c436783ad613\",\"urls\":[\"bzz-raw://ddf5847cefc723bcecedc4f873cd9524702e4740457fee1afc07f0ce495eba38\",\"dweb:/ipfs/Qmc6oD7uesTS9coZykPyFKQtHJ2naQizZyU61nCd8mQpSD\"]}},\"version\":1}",
+  "bytecode": "0x60806040526040518060400160405280600e81526020017f417070726f76616c4d61747269780000000000000000000000000000000000008152506000908051906020019061004f9291906100a3565b5034801561005c57600080fd5b5033600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610148565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100e457805160ff1916838001178555610112565b82800160010185558215610112579182015b828111156101115782518255916020019190600101906100f6565b5b50905061011f9190610123565b5090565b61014591905b80821115610141576000816000905550600101610129565b5090565b90565b6105e0806101576000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806306fdde03146100515780638da5cb5b146100d45780639047bf581461011e57806399b65f791461013c575b600080fd5b6100596102d7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009957808201518184015260208101905061007e565b50505050905090810190601f1680156100c65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100dc610375565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61012661039b565b6040518082815260200191505060405180910390f35b6101686004803603602081101561015257600080fd5b81019080803590602001909291905050506103a1565b60405180888152602001878152602001806020018060200180602001868152602001858152602001848103845289818151815260200191508051906020019080838360005b838110156101c85780820151818401526020810190506101ad565b50505050905090810190601f1680156101f55780820380516001836020036101000a031916815260200191505b50848103835288818151815260200191508051906020019080838360005b8381101561022e578082015181840152602081019050610213565b50505050905090810190601f16801561025b5780820380516001836020036101000a031916815260200191505b50848103825287818151815260200191508051906020019080838360005b83811015610294578082015181840152602081019050610279565b50505050905090810190601f1680156102c15780820380516001836020036101000a031916815260200191505b509a505050505050505050505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561036d5780601f106103425761010080835404028352916020019161036d565b820191906000526020600020905b81548152906001019060200180831161035057829003601f168201915b505050505081565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60035481565b6002602052806000526040600020600091509050806000015490806001015490806002018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104595780601f1061042e57610100808354040283529160200191610459565b820191906000526020600020905b81548152906001019060200180831161043c57829003601f168201915b505050505090806003018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104f75780601f106104cc576101008083540402835291602001916104f7565b820191906000526020600020905b8154815290600101906020018083116104da57829003601f168201915b505050505090806004018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105955780601f1061056a57610100808354040283529160200191610595565b820191906000526020600020905b81548152906001019060200180831161057857829003601f168201915b505050505090806005015490806006015490508756fea265627a7a72315820ac12158f71d91d11f9c2573577ba738c8398587d6dfe0ecfd980ff0b10023cef64736f6c63430005100032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806306fdde03146100515780638da5cb5b146100d45780639047bf581461011e57806399b65f791461013c575b600080fd5b6100596102d7565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009957808201518184015260208101905061007e565b50505050905090810190601f1680156100c65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100dc610375565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61012661039b565b6040518082815260200191505060405180910390f35b6101686004803603602081101561015257600080fd5b81019080803590602001909291905050506103a1565b60405180888152602001878152602001806020018060200180602001868152602001858152602001848103845289818151815260200191508051906020019080838360005b838110156101c85780820151818401526020810190506101ad565b50505050905090810190601f1680156101f55780820380516001836020036101000a031916815260200191505b50848103835288818151815260200191508051906020019080838360005b8381101561022e578082015181840152602081019050610213565b50505050905090810190601f16801561025b5780820380516001836020036101000a031916815260200191505b50848103825287818151815260200191508051906020019080838360005b83811015610294578082015181840152602081019050610279565b50505050905090810190601f1680156102c15780820380516001836020036101000a031916815260200191505b509a505050505050505050505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561036d5780601f106103425761010080835404028352916020019161036d565b820191906000526020600020905b81548152906001019060200180831161035057829003601f168201915b505050505081565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60035481565b6002602052806000526040600020600091509050806000015490806001015490806002018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104595780601f1061042e57610100808354040283529160200191610459565b820191906000526020600020905b81548152906001019060200180831161043c57829003601f168201915b505050505090806003018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104f75780601f106104cc576101008083540402835291602001916104f7565b820191906000526020600020905b8154815290600101906020018083116104da57829003601f168201915b505050505090806004018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105955780601f1061056a57610100808354040283529160200191610595565b820191906000526020600020905b81548152906001019060200180831161057857829003601f168201915b505050505090806005015490806006015490508756fea265627a7a72315820ac12158f71d91d11f9c2573577ba738c8398587d6dfe0ecfd980ff0b10023cef64736f6c63430005100032",
+  "sourceMap": "25:915:0:-;;;51:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;555:56;8:9:-1;5:2;;;30:1;27;20:12;5:2;555:56:0;594:10;586:5;;:18;;;;;;;;;;;;;;;;;;25:915;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "25:915:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:915:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;51:38;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;51:38:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;91:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;187:25;;;:::i;:::-;;;;;;;;;;;;;;;;;;;114:47;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;114:47:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;114:47:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;114:47:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;114:47:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;51:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;91:20::-;;;;;;;;;;;;;:::o;187:25::-;;;;:::o;114:47::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\ncontract ApprovalMatrix {\nstring  public name = \"ApprovalMatrix\";\naddress public owner;\n\nmapping(uint => EmployeeMatrix) public employee;\n// Store employee Count\nuint public employeeCount;\n\nstruct EmployeeMatrix {\n    uint id;\n    int account;\n    string EmployeeName;\n    string EmployeeEmail;\n    string EmployeeRole;\n    uint EmployeeMaxBaget;\n    uint voteCount;\n}\n\n/*\nevent employee(\n\t    address _account,\n\t    string _employeeName,\n\t    string _employeeEmail,\n\t    string _employeeRole,\n\t    uint _employeeMaxBaget \n\n);*/\n\nconstructor() public {\n        owner = msg.sender;\n    }\n\n\nfunction AddEmployee(int _account, string storage _employeeName, string storage _employeeEmail, string storage _employeeRole, uint _employeeMaxBaget) private {\n    employeeCount ++;\n    employee[employeeCount] = EmployeeMatrix(employeeCount, _account, _employeeName, _employeeEmail, _employeeRole, _employeeMaxBaget, 0);\n}\n\n\n}",
   "sourcePath": "/Users/tanpao/dev/Blockchain/ApprovalMatrix/src/contracts/ApprovalMatrix.sol",
   "ast": {
     "absolutePath": "/Users/tanpao/dev/Blockchain/ApprovalMatrix/src/contracts/ApprovalMatrix.sol",
     "exportedSymbols": {
       "ApprovalMatrix": [
-        39
+        68
       ]
     },
-    "id": 40,
+    "id": 69,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -123,9 +138,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 39,
+        "id": 68,
         "linearizedBaseContracts": [
-          39
+          68
         ],
         "name": "ApprovalMatrix",
         "nodeType": "ContractDefinition",
@@ -135,7 +150,7 @@
             "id": 4,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 39,
+            "scope": 68,
             "src": "51:38:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -178,7 +193,7 @@
             "id": 6,
             "name": "owner",
             "nodeType": "VariableDeclaration",
-            "scope": 39,
+            "scope": 68,
             "src": "91:20:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -202,63 +217,292 @@
           },
           {
             "constant": false,
-            "id": 9,
-            "name": "EmployeeMatrix",
+            "id": 10,
+            "name": "employee",
             "nodeType": "VariableDeclaration",
-            "scope": 39,
-            "src": "114:31:0",
+            "scope": 68,
+            "src": "114:47:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_address_$dyn_storage",
-              "typeString": "address[]"
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_EmployeeMatrix_$27_storage_$",
+              "typeString": "mapping(uint256 => struct ApprovalMatrix.EmployeeMatrix)"
             },
             "typeName": {
-              "baseType": {
+              "id": 9,
+              "keyType": {
                 "id": 7,
-                "name": "address",
+                "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "114:7:0",
-                "stateMutability": "nonpayable",
+                "src": "122:4:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_address",
-                  "typeString": "address"
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
                 }
               },
-              "id": 8,
-              "length": null,
-              "nodeType": "ArrayTypeName",
-              "src": "114:9:0",
+              "nodeType": "Mapping",
+              "src": "114:31:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
-                "typeString": "address[]"
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_EmployeeMatrix_$27_storage_$",
+                "typeString": "mapping(uint256 => struct ApprovalMatrix.EmployeeMatrix)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 8,
+                "name": "EmployeeMatrix",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 27,
+                "src": "130:14:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_EmployeeMatrix_$27_storage_ptr",
+                  "typeString": "struct ApprovalMatrix.EmployeeMatrix"
+                }
               }
             },
             "value": null,
             "visibility": "public"
           },
           {
+            "constant": false,
+            "id": 12,
+            "name": "employeeCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 68,
+            "src": "187:25:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "187:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "ApprovalMatrix.EmployeeMatrix",
+            "id": 27,
+            "members": [
+              {
+                "constant": false,
+                "id": 14,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "243:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 13,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "243:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 16,
+                "name": "account",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "256:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                },
+                "typeName": {
+                  "id": 15,
+                  "name": "int",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "256:3:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 18,
+                "name": "EmployeeName",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "273:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 17,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "273:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 20,
+                "name": "EmployeeEmail",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "298:20:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 19,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "298:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 22,
+                "name": "EmployeeRole",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "324:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 21,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "324:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 24,
+                "name": "EmployeeMaxBaget",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "349:21:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 23,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "349:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 26,
+                "name": "voteCount",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "376:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 25,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "376:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "EmployeeMatrix",
+            "nodeType": "StructDefinition",
+            "scope": 68,
+            "src": "215:178:0",
+            "visibility": "public"
+          },
+          {
             "body": {
-              "id": 17,
+              "id": 35,
               "nodeType": "Block",
-              "src": "571:35:0",
+              "src": "576:35:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 15,
+                    "id": 33,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 12,
+                      "id": 30,
                       "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 6,
-                      "src": "581:5:0",
+                      "src": "586:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -270,18 +514,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 13,
+                        "id": 31,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 111,
-                        "src": "589:3:0",
+                        "referencedDeclaration": 140,
+                        "src": "594:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 14,
+                      "id": 32,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -289,202 +533,429 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "589:10:0",
+                      "src": "594:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       }
                     },
-                    "src": "581:18:0",
+                    "src": "586:18:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 16,
+                  "id": 34,
                   "nodeType": "ExpressionStatement",
-                  "src": "581:18:0"
+                  "src": "586:18:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 18,
+            "id": 36,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 10,
+              "id": 28,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "561:2:0"
+              "src": "566:2:0"
             },
             "returnParameters": {
-              "id": 11,
+              "id": 29,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "571:0:0"
+              "src": "576:0:0"
             },
-            "scope": 39,
-            "src": "550:56:0",
+            "scope": 68,
+            "src": "555:56:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 37,
+              "id": 66,
               "nodeType": "Block",
-              "src": "736:248:0",
+              "src": "772:164:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "arguments": [
-                      {
-                        "argumentTypes": null,
-                        "commonType": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
-                        },
-                        "id": 33,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "leftExpression": {
-                          "argumentTypes": null,
-                          "id": 30,
-                          "name": "owner",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 6,
-                          "src": "746:5:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          }
-                        },
-                        "nodeType": "BinaryOperation",
-                        "operator": "==",
-                        "rightExpression": {
-                          "argumentTypes": null,
-                          "expression": {
-                            "argumentTypes": null,
-                            "id": 31,
-                            "name": "msg",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 111,
-                            "src": "755:3:0",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_magic_message",
-                              "typeString": "msg"
-                            }
-                          },
-                          "id": 32,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "memberName": "sender",
-                          "nodeType": "MemberAccess",
-                          "referencedDeclaration": null,
-                          "src": "755:10:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address_payable",
-                            "typeString": "address payable"
-                          }
-                        },
-                        "src": "746:19:0",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        }
-                      },
-                      {
-                        "argumentTypes": null,
-                        "hexValue": "796f7520617265206e6f7420746865206f776e6572",
-                        "id": 34,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": true,
-                        "kind": "string",
-                        "lValueRequested": false,
-                        "nodeType": "Literal",
-                        "src": "767:23:0",
-                        "subdenomination": null,
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_89a3d2cdd8534687d72382851c0df038982c5ac6bd4b7d04f64810684712218f",
-                          "typeString": "literal_string \"you are not the owner\""
-                        },
-                        "value": "you are not the owner"
-                      }
-                    ],
-                    "expression": {
-                      "argumentTypes": [
-                        {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        },
-                        {
-                          "typeIdentifier": "t_stringliteral_89a3d2cdd8534687d72382851c0df038982c5ac6bd4b7d04f64810684712218f",
-                          "typeString": "literal_string \"you are not the owner\""
-                        }
-                      ],
-                      "id": 29,
-                      "name": "require",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        114,
-                        115
-                      ],
-                      "referencedDeclaration": 115,
-                      "src": "738:7:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
-                        "typeString": "function (bool,string memory) pure"
-                      }
-                    },
-                    "id": 35,
+                    "id": 50,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
-                    "kind": "functionCall",
                     "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "738:53:0",
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "778:16:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 49,
+                      "name": "employeeCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12,
+                      "src": "778:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
                     "typeDescriptions": {
-                      "typeIdentifier": "t_tuple$__$",
-                      "typeString": "tuple()"
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
                     }
                   },
-                  "id": 36,
+                  "id": 51,
                   "nodeType": "ExpressionStatement",
-                  "src": "738:53:0"
+                  "src": "778:16:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 64,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 52,
+                        "name": "employee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10,
+                        "src": "800:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_EmployeeMatrix_$27_storage_$",
+                          "typeString": "mapping(uint256 => struct ApprovalMatrix.EmployeeMatrix storage ref)"
+                        }
+                      },
+                      "id": 54,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 53,
+                        "name": "employeeCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12,
+                        "src": "809:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "800:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_EmployeeMatrix_$27_storage",
+                        "typeString": "struct ApprovalMatrix.EmployeeMatrix storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 56,
+                          "name": "employeeCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12,
+                          "src": "841:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 57,
+                          "name": "_account",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 38,
+                          "src": "856:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_int256",
+                            "typeString": "int256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 58,
+                          "name": "_employeeName",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 40,
+                          "src": "866:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 59,
+                          "name": "_employeeEmail",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 42,
+                          "src": "881:14:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 60,
+                          "name": "_employeeRole",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 44,
+                          "src": "897:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 61,
+                          "name": "_employeeMaxBaget",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 46,
+                          "src": "912:17:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 62,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "931:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_int256",
+                            "typeString": "int256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          },
+                          {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          },
+                          {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 55,
+                        "name": "EmployeeMatrix",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 27,
+                        "src": "826:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_EmployeeMatrix_$27_storage_ptr_$",
+                          "typeString": "type(struct ApprovalMatrix.EmployeeMatrix storage pointer)"
+                        }
+                      },
+                      "id": 63,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "826:107:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_EmployeeMatrix_$27_memory",
+                        "typeString": "struct ApprovalMatrix.EmployeeMatrix memory"
+                      }
+                    },
+                    "src": "800:133:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_EmployeeMatrix_$27_storage",
+                      "typeString": "struct ApprovalMatrix.EmployeeMatrix storage ref"
+                    }
+                  },
+                  "id": 65,
+                  "nodeType": "ExpressionStatement",
+                  "src": "800:133:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 38,
+            "id": 67,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "AddEmployee",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 27,
+              "id": 47,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 20,
-                  "name": "account",
+                  "id": 38,
+                  "name": "_account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 38,
-                  "src": "630:12:0",
+                  "scope": 67,
+                  "src": "635:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 37,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "635:3:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 40,
+                  "name": "_employeeName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 67,
+                  "src": "649:28:0",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 39,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "649:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 42,
+                  "name": "_employeeEmail",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 67,
+                  "src": "679:29:0",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 41,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "679:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 44,
+                  "name": "_employeeRole",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 67,
+                  "src": "710:28:0",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 43,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "710:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 46,
+                  "name": "_employeeMaxBaget",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 67,
+                  "src": "740:22:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -492,10 +963,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 19,
+                    "id": 45,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "630:4:0",
+                    "src": "740:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -503,115 +974,37 @@
                   },
                   "value": null,
                   "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 22,
-                  "name": "EmployeeName",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 38,
-                  "src": "644:26:0",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 21,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "644:6:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 24,
-                  "name": "EmployeeEmail",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 38,
-                  "src": "672:27:0",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 23,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "672:6:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 26,
-                  "name": "EmployeeRole",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 38,
-                  "src": "701:26:0",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 25,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "701:6:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
                 }
               ],
-              "src": "629:99:0"
+              "src": "634:129:0"
             },
             "returnParameters": {
-              "id": 28,
+              "id": 48,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "736:0:0"
+              "src": "772:0:0"
             },
-            "scope": 39,
-            "src": "609:375:0",
+            "scope": 68,
+            "src": "614:322:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
-            "visibility": "public"
+            "visibility": "private"
           }
         ],
-        "scope": 40,
-        "src": "25:963:0"
+        "scope": 69,
+        "src": "25:915:0"
       }
     ],
-    "src": "0:988:0"
+    "src": "0:940:0"
   },
   "legacyAST": {
     "absolutePath": "/Users/tanpao/dev/Blockchain/ApprovalMatrix/src/contracts/ApprovalMatrix.sol",
     "exportedSymbols": {
       "ApprovalMatrix": [
-        39
+        68
       ]
     },
-    "id": 40,
+    "id": 69,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -631,9 +1024,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 39,
+        "id": 68,
         "linearizedBaseContracts": [
-          39
+          68
         ],
         "name": "ApprovalMatrix",
         "nodeType": "ContractDefinition",
@@ -643,7 +1036,7 @@
             "id": 4,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 39,
+            "scope": 68,
             "src": "51:38:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -686,7 +1079,7 @@
             "id": 6,
             "name": "owner",
             "nodeType": "VariableDeclaration",
-            "scope": 39,
+            "scope": 68,
             "src": "91:20:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -710,63 +1103,292 @@
           },
           {
             "constant": false,
-            "id": 9,
-            "name": "EmployeeMatrix",
+            "id": 10,
+            "name": "employee",
             "nodeType": "VariableDeclaration",
-            "scope": 39,
-            "src": "114:31:0",
+            "scope": 68,
+            "src": "114:47:0",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_array$_t_address_$dyn_storage",
-              "typeString": "address[]"
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_EmployeeMatrix_$27_storage_$",
+              "typeString": "mapping(uint256 => struct ApprovalMatrix.EmployeeMatrix)"
             },
             "typeName": {
-              "baseType": {
+              "id": 9,
+              "keyType": {
                 "id": 7,
-                "name": "address",
+                "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "114:7:0",
-                "stateMutability": "nonpayable",
+                "src": "122:4:0",
                 "typeDescriptions": {
-                  "typeIdentifier": "t_address",
-                  "typeString": "address"
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
                 }
               },
-              "id": 8,
-              "length": null,
-              "nodeType": "ArrayTypeName",
-              "src": "114:9:0",
+              "nodeType": "Mapping",
+              "src": "114:31:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
-                "typeString": "address[]"
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_EmployeeMatrix_$27_storage_$",
+                "typeString": "mapping(uint256 => struct ApprovalMatrix.EmployeeMatrix)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 8,
+                "name": "EmployeeMatrix",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 27,
+                "src": "130:14:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_EmployeeMatrix_$27_storage_ptr",
+                  "typeString": "struct ApprovalMatrix.EmployeeMatrix"
+                }
               }
             },
             "value": null,
             "visibility": "public"
           },
           {
+            "constant": false,
+            "id": 12,
+            "name": "employeeCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 68,
+            "src": "187:25:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "187:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "ApprovalMatrix.EmployeeMatrix",
+            "id": 27,
+            "members": [
+              {
+                "constant": false,
+                "id": 14,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "243:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 13,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "243:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 16,
+                "name": "account",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "256:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int256",
+                  "typeString": "int256"
+                },
+                "typeName": {
+                  "id": 15,
+                  "name": "int",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "256:3:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 18,
+                "name": "EmployeeName",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "273:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 17,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "273:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 20,
+                "name": "EmployeeEmail",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "298:20:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 19,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "298:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 22,
+                "name": "EmployeeRole",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "324:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 21,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "324:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 24,
+                "name": "EmployeeMaxBaget",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "349:21:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 23,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "349:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 26,
+                "name": "voteCount",
+                "nodeType": "VariableDeclaration",
+                "scope": 27,
+                "src": "376:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 25,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "376:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "EmployeeMatrix",
+            "nodeType": "StructDefinition",
+            "scope": 68,
+            "src": "215:178:0",
+            "visibility": "public"
+          },
+          {
             "body": {
-              "id": 17,
+              "id": 35,
               "nodeType": "Block",
-              "src": "571:35:0",
+              "src": "576:35:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 15,
+                    "id": 33,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 12,
+                      "id": 30,
                       "name": "owner",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 6,
-                      "src": "581:5:0",
+                      "src": "586:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -778,18 +1400,18 @@
                       "argumentTypes": null,
                       "expression": {
                         "argumentTypes": null,
-                        "id": 13,
+                        "id": 31,
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 111,
-                        "src": "589:3:0",
+                        "referencedDeclaration": 140,
+                        "src": "594:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
                           "typeString": "msg"
                         }
                       },
-                      "id": 14,
+                      "id": 32,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -797,202 +1419,429 @@
                       "memberName": "sender",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
-                      "src": "589:10:0",
+                      "src": "594:10:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address_payable",
                         "typeString": "address payable"
                       }
                     },
-                    "src": "581:18:0",
+                    "src": "586:18:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
                     }
                   },
-                  "id": 16,
+                  "id": 34,
                   "nodeType": "ExpressionStatement",
-                  "src": "581:18:0"
+                  "src": "586:18:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 18,
+            "id": 36,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 10,
+              "id": 28,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "561:2:0"
+              "src": "566:2:0"
             },
             "returnParameters": {
-              "id": 11,
+              "id": 29,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "571:0:0"
+              "src": "576:0:0"
             },
-            "scope": 39,
-            "src": "550:56:0",
+            "scope": 68,
+            "src": "555:56:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 37,
+              "id": 66,
               "nodeType": "Block",
-              "src": "736:248:0",
+              "src": "772:164:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "arguments": [
-                      {
-                        "argumentTypes": null,
-                        "commonType": {
-                          "typeIdentifier": "t_address",
-                          "typeString": "address"
-                        },
-                        "id": 33,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": false,
-                        "lValueRequested": false,
-                        "leftExpression": {
-                          "argumentTypes": null,
-                          "id": 30,
-                          "name": "owner",
-                          "nodeType": "Identifier",
-                          "overloadedDeclarations": [],
-                          "referencedDeclaration": 6,
-                          "src": "746:5:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address",
-                            "typeString": "address"
-                          }
-                        },
-                        "nodeType": "BinaryOperation",
-                        "operator": "==",
-                        "rightExpression": {
-                          "argumentTypes": null,
-                          "expression": {
-                            "argumentTypes": null,
-                            "id": 31,
-                            "name": "msg",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 111,
-                            "src": "755:3:0",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_magic_message",
-                              "typeString": "msg"
-                            }
-                          },
-                          "id": 32,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "memberName": "sender",
-                          "nodeType": "MemberAccess",
-                          "referencedDeclaration": null,
-                          "src": "755:10:0",
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_address_payable",
-                            "typeString": "address payable"
-                          }
-                        },
-                        "src": "746:19:0",
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        }
-                      },
-                      {
-                        "argumentTypes": null,
-                        "hexValue": "796f7520617265206e6f7420746865206f776e6572",
-                        "id": 34,
-                        "isConstant": false,
-                        "isLValue": false,
-                        "isPure": true,
-                        "kind": "string",
-                        "lValueRequested": false,
-                        "nodeType": "Literal",
-                        "src": "767:23:0",
-                        "subdenomination": null,
-                        "typeDescriptions": {
-                          "typeIdentifier": "t_stringliteral_89a3d2cdd8534687d72382851c0df038982c5ac6bd4b7d04f64810684712218f",
-                          "typeString": "literal_string \"you are not the owner\""
-                        },
-                        "value": "you are not the owner"
-                      }
-                    ],
-                    "expression": {
-                      "argumentTypes": [
-                        {
-                          "typeIdentifier": "t_bool",
-                          "typeString": "bool"
-                        },
-                        {
-                          "typeIdentifier": "t_stringliteral_89a3d2cdd8534687d72382851c0df038982c5ac6bd4b7d04f64810684712218f",
-                          "typeString": "literal_string \"you are not the owner\""
-                        }
-                      ],
-                      "id": 29,
-                      "name": "require",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [
-                        114,
-                        115
-                      ],
-                      "referencedDeclaration": 115,
-                      "src": "738:7:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
-                        "typeString": "function (bool,string memory) pure"
-                      }
-                    },
-                    "id": 35,
+                    "id": 50,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
-                    "kind": "functionCall",
                     "lValueRequested": false,
-                    "names": [],
-                    "nodeType": "FunctionCall",
-                    "src": "738:53:0",
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "778:16:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 49,
+                      "name": "employeeCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12,
+                      "src": "778:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
                     "typeDescriptions": {
-                      "typeIdentifier": "t_tuple$__$",
-                      "typeString": "tuple()"
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
                     }
                   },
-                  "id": 36,
+                  "id": 51,
                   "nodeType": "ExpressionStatement",
-                  "src": "738:53:0"
+                  "src": "778:16:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 64,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 52,
+                        "name": "employee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10,
+                        "src": "800:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_EmployeeMatrix_$27_storage_$",
+                          "typeString": "mapping(uint256 => struct ApprovalMatrix.EmployeeMatrix storage ref)"
+                        }
+                      },
+                      "id": 54,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 53,
+                        "name": "employeeCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12,
+                        "src": "809:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "800:23:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_EmployeeMatrix_$27_storage",
+                        "typeString": "struct ApprovalMatrix.EmployeeMatrix storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 56,
+                          "name": "employeeCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 12,
+                          "src": "841:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 57,
+                          "name": "_account",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 38,
+                          "src": "856:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_int256",
+                            "typeString": "int256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 58,
+                          "name": "_employeeName",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 40,
+                          "src": "866:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 59,
+                          "name": "_employeeEmail",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 42,
+                          "src": "881:14:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 60,
+                          "name": "_employeeRole",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 44,
+                          "src": "897:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 61,
+                          "name": "_employeeMaxBaget",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 46,
+                          "src": "912:17:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 62,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "931:1:0",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_int256",
+                            "typeString": "int256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          },
+                          {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          },
+                          {
+                            "typeIdentifier": "t_string_storage_ptr",
+                            "typeString": "string storage pointer"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 55,
+                        "name": "EmployeeMatrix",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 27,
+                        "src": "826:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_EmployeeMatrix_$27_storage_ptr_$",
+                          "typeString": "type(struct ApprovalMatrix.EmployeeMatrix storage pointer)"
+                        }
+                      },
+                      "id": 63,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "826:107:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_EmployeeMatrix_$27_memory",
+                        "typeString": "struct ApprovalMatrix.EmployeeMatrix memory"
+                      }
+                    },
+                    "src": "800:133:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_EmployeeMatrix_$27_storage",
+                      "typeString": "struct ApprovalMatrix.EmployeeMatrix storage ref"
+                    }
+                  },
+                  "id": 65,
+                  "nodeType": "ExpressionStatement",
+                  "src": "800:133:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 38,
+            "id": 67,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "AddEmployee",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 27,
+              "id": 47,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 20,
-                  "name": "account",
+                  "id": 38,
+                  "name": "_account",
                   "nodeType": "VariableDeclaration",
-                  "scope": 38,
-                  "src": "630:12:0",
+                  "scope": 67,
+                  "src": "635:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 37,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "635:3:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 40,
+                  "name": "_employeeName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 67,
+                  "src": "649:28:0",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 39,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "649:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 42,
+                  "name": "_employeeEmail",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 67,
+                  "src": "679:29:0",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 41,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "679:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 44,
+                  "name": "_employeeRole",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 67,
+                  "src": "710:28:0",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 43,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "710:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 46,
+                  "name": "_employeeMaxBaget",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 67,
+                  "src": "740:22:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1000,10 +1849,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 19,
+                    "id": 45,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "630:4:0",
+                    "src": "740:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1011,106 +1860,28 @@
                   },
                   "value": null,
                   "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 22,
-                  "name": "EmployeeName",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 38,
-                  "src": "644:26:0",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 21,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "644:6:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 24,
-                  "name": "EmployeeEmail",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 38,
-                  "src": "672:27:0",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 23,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "672:6:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                },
-                {
-                  "constant": false,
-                  "id": 26,
-                  "name": "EmployeeRole",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 38,
-                  "src": "701:26:0",
-                  "stateVariable": false,
-                  "storageLocation": "memory",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 25,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "701:6:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
                 }
               ],
-              "src": "629:99:0"
+              "src": "634:129:0"
             },
             "returnParameters": {
-              "id": 28,
+              "id": 48,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "736:0:0"
+              "src": "772:0:0"
             },
-            "scope": 39,
-            "src": "609:375:0",
+            "scope": 68,
+            "src": "614:322:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
-            "visibility": "public"
+            "visibility": "private"
           }
         ],
-        "scope": 40,
-        "src": "25:963:0"
+        "scope": 69,
+        "src": "25:915:0"
       }
     ],
-    "src": "0:988:0"
+    "src": "0:940:0"
   },
   "compiler": {
     "name": "solc",
@@ -1118,7 +1889,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.3",
-  "updatedAt": "2021-02-04T15:09:13.481Z",
+  "updatedAt": "2021-02-07T08:43:20.800Z",
   "devdoc": {
     "methods": {}
   },

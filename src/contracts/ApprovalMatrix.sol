@@ -4,39 +4,38 @@ contract ApprovalMatrix {
 string  public name = "ApprovalMatrix";
 address public owner;
 
-address[] public EmployeeMatrix;
-/*mapping(address => uint) public account;
-mapping(address => string) public EmployeeName;
-mapping(address => string) public EmployeeEmail;
-mapping(address => string) public EmployeeRole;
-mapping(address => uint256) public EmployeeMaxBaget; */
+mapping(uint => EmployeeMatrix) public employee;
+// Store employee Count
+uint public employeeCount;
 
+struct EmployeeMatrix {
+    uint id;
+    int account;
+    string EmployeeName;
+    string EmployeeEmail;
+    string EmployeeRole;
+    uint EmployeeMaxBaget;
+    uint voteCount;
+}
 
-/*event AddEmployee(
-	    address account,
-	    string EmployeeName,
-	    string EmployeeEmail,
-	    string EmployeeRole,
-	    uint maxBagetApprove 
+/*
+event employee(
+	    address _account,
+	    string _employeeName,
+	    string _employeeEmail,
+	    string _employeeRole,
+	    uint _employeeMaxBaget 
 
-); */
+);*/
 
 constructor() public {
         owner = msg.sender;
     }
 
 
-function AddEmployee(uint account, string memory EmployeeName, string memory EmployeeEmail, string memory EmployeeRole) public {
-require(owner == msg.sender, "you are not the owner");
-/*
-	EmployeeMatrix.push(
-                account,
-                EmployeeName,
-                EmployeeEmail,
-                EmployeeRole,
-                msg.value
-            
-    ); */
+function AddEmployee(int _account, string storage _employeeName, string storage _employeeEmail, string storage _employeeRole, uint _employeeMaxBaget) private {
+    employeeCount ++;
+    employee[employeeCount] = EmployeeMatrix(employeeCount, _account, _employeeName, _employeeEmail, _employeeRole, _employeeMaxBaget, 0);
 }
 
 
