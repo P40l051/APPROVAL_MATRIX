@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Identicon from 'identicon.js';
+import ReloadButton from './ReloadButton';
 
 class Navbar extends Component {
 
@@ -15,6 +16,7 @@ render() {
           >
             Approval Matrix
           </a>
+          <ReloadButton />
           <ul className="navbar-nav px-3">
             <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
               <small className="text-secondary">

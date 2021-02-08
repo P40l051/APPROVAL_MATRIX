@@ -4,6 +4,7 @@ import Web3 from 'web3'
 
 import AddEmployee from './AddEmployee';
 import Navbar from './Navbar';
+import ReloadButton from './ReloadButton';
 
 class App extends Component {
   async componentWillMount() {
@@ -43,7 +44,6 @@ class App extends Component {
     }
   }
 
-
   render() {
     return (
       <div>
@@ -51,6 +51,7 @@ class App extends Component {
         <div className="container-fluid mt-5">
           <AddEmployee />
         </div>
+        <ReloadButton />
       </div>
     );
   }
