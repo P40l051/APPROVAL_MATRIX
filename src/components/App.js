@@ -38,7 +38,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      account: '0x0',
+      account: '',
       loading: true
     }
   }
