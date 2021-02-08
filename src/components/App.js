@@ -35,10 +35,19 @@ class App extends Component {
     }
   }
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      account: '0x0',
+      loading: true
+    }
+  }
+
+
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar account={this.state.account}/>
         <div className="container-fluid mt-5">
           <AddEmployee />
         </div>
