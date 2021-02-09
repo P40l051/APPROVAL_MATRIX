@@ -1,12 +1,28 @@
 import React, { Component } from 'react'
 import { Accordion, Card, Button } from 'react-bootstrap';
+import ConnectionButton from './ConnectionButton';
 
 class AddEmployee extends Component {
 
 render() {
-    return (
-      <div>
-      <Accordion>
+
+    let content
+    if(!this.props.account) {
+      content = <div>
+                  <p>You need Metamask extention to open this DApp.</p>
+                  <p>For more information and download visit 
+                  <a className="Metamask-link"
+                  href="https://metamask.io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                > https://metamask.io</a>.</p>
+                  <p>Once installation in completed connect with the following button.</p>
+                  <p><ConnectionButton /></p>
+                </div> 
+
+    } else {
+      content =
+        <Accordion>
         <Card><Card.Body>Open the following section to add a new employe!</Card.Body></Card>
         <Card>
           <Card.Header>
@@ -49,15 +65,17 @@ render() {
                         <label class="form-check-label" for="exampleCheck1">Check me out if informations are correct.</label>
                       </div>
                     </p>
-                    <p>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </p>
                   </form>
-            		</div>
+                </div>
               </Card.Body>
             </Accordion.Collapse>
         </Card>
       </Accordion>
+    }
+
+    return (
+      <div>
+       {content}
       </div>
 	 );
 }
