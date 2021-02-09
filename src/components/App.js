@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Web3 from 'web3'
 
-import AddEmployee from './AddEmployee';
+import Main from './Main';
 import Navbar from './Navbar';
 
 
@@ -48,7 +48,7 @@ class App extends Component {
       <div>
         <Navbar account={this.state.account}/>
         <div className="container-fluid mt-5">
-          <AddEmployee account={this.state.account}/>
+          <Main account={this.state.account}/>
         </div>
       </div>
     );
