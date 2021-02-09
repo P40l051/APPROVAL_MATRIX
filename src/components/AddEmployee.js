@@ -41,8 +41,9 @@ render() {
                         <small id="emailHelp" class="form-text text-muted">Enter Employee Role</small>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Employee Baget</label>
+                        <label for="exampleInputPassword1">Financial Power: Stake Employee Baget [ETH]</label>
                         <input type="number" class="form-control" id="exampleInputPassword1" placeholder="e.g.: 20 ETH" />
+                        <small id="emailHelp" class="form-text text-muted">To create a an employer with X financial power you have to stake X ETH and you get Y Approval Matrix Token. Approval Matrix token is the token used to pay your employees.</small>
                       </div>
                       <p>
                         <div class="form-check">
@@ -50,7 +51,7 @@ render() {
                           <label class="form-check-label" for="exampleCheck1">Check me out if Employee informations are correct.</label>
                         </div>
                       </p>
-                      <Button variant="primary">Submit</Button>
+                      <Button variant="primary">Submit & Stake</Button>
                     </form>
                   </div>
                 </Card.Body>

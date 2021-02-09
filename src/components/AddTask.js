@@ -31,8 +31,8 @@ render() {
                         <small id="emailHelp" class="form-text text-muted">Enter Employee Role</small>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Baget offered</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="e.g.: 20" />
+                        <label for="exampleInputPassword1">Baget offered [AMT] or [ETH]</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="e.g.: 20 Approval Matrix Tokens" />
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Task description</label>
