@@ -4,6 +4,7 @@ import ConnectionButton from './ConnectionButton';
 import LoadMetamaskText from './LoadMetamaskText';
 import AddEmployee from './AddEmployee';
 import AddTask from './AddTask';
+import Tasks from './Tasks';
 
 class Main extends Component {
 
@@ -17,6 +18,7 @@ render() {
       content = <div>
                   <p><AddEmployee /></p>
                   <p><AddTask /></p>
+                  <p><Tasks /></p>
                 </div>
     }
 

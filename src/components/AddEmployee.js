@@ -37,12 +37,12 @@ render() {
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Employee Role</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: foreign affairs" />
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: Senior Teacher" />
                         <small id="emailHelp" class="form-text text-muted">Enter Employee Role</small>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Employee Max Baget</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                        <label for="exampleInputPassword1">Employee Baget</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="e.g.: 20 ETH" />
                       </div>
                       <p>
                         <div class="form-check">

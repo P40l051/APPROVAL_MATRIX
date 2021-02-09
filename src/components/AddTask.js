@@ -21,17 +21,22 @@ render() {
                     <form>
                       <p> </p>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">Level of approval</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: foreign affairs" />
+                        <label for="exampleInputEmail1">Task Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: Explain Mathematics" />
                         <small id="emailHelp" class="form-text text-muted">Enter Employee Role</small>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Baget requested</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                        <label for="exampleInputEmail1">Role of approval</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: Senior Teacher" />
+                        <small id="emailHelp" class="form-text text-muted">Enter Employee Role</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Baget offered</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="e.g.: 20" />
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Task description</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: Mario" />
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: explain Fibonacci number to 0xC4c06c58918b0a9F452b95f5BA2d62b0e2310bfD. Phone Number: 3401205747" />
                         <small id="emailHelp" class="form-text text-muted">Enter Employee name</small>
                       </div>
                       <p>
