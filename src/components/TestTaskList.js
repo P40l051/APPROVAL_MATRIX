@@ -22,7 +22,6 @@ const tasks = [
 
 const TestTaskList = () => (
     <div>
-    <ul>
         {tasks.map(task => (
             <ListGroup className="my-2" key={task.id}>
                 <ListGroup.Item>{task.id}</ListGroup.Item>
@@ -34,7 +33,6 @@ const TestTaskList = () => (
                 <ListGroup.Item><Button variant="primary">I'll do this task!</Button></ListGroup.Item>
             </ListGroup>
         ))}
-    </ul>
     </div>
 );
 

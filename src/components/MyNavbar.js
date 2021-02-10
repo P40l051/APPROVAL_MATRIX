@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import Identicon from 'identicon.js';
 import ConnectionButton from './ConnectionButton';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
-class Navbar extends Component {
+class MyNavbar extends Component {
 
 render() {
   let content
     if(!this.props.account) {
-      content = <ConnectionButton /> 
+      content = <ConnectionButton />
     } else {
       content =
         <ul className="navbar-nav px-3">
@@ -31,19 +32,19 @@ render() {
     
     return (
       <div>
-        <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-          <a
-            className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Approval Matrix
-          </a>
-          {content}
-        </nav>
+        <Navbar expand="md" bg="dark" variant="dark">
+           <Navbar.Brand href="#home">Approval Matrix</Navbar.Brand>
+           <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="#features">My Profile</Nav.Link>
+              <Nav.Link href="#features">Tasks</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+          <Nav>{content}</Nav>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        </Navbar>
       </div>
 	 );
 }
 }
-export default Navbar;
+export default MyNavbar;

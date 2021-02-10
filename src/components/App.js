@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Web3 from 'web3'
 
 import Main from './Main';
-import Navbar from './Navbar';
+import MyNavbar from './MyNavbar';
 
 
 class App extends Component {
@@ -46,7 +46,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar account={this.state.account}/>
+        <MyNavbar account={this.state.account}/>
         <div className="container-fluid mt-5">
           <Main account={this.state.account}/>
         </div>

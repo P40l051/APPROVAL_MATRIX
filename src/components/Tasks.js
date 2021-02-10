@@ -9,7 +9,7 @@ render() {
     return (
       <div>
         <Accordion>
-          <Card><Card.Body>Open the following section to watch task list could be completed!</Card.Body></Card>
+          <Card><Card.Body>Open the following section to watch task list you could accept!</Card.Body></Card>
           <Card>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="0">

@@ -8,11 +8,11 @@ render() {
     return (
       <div>
         <Accordion>
-          <Card><Card.Body>Open the following section to add a new employe!</Card.Body></Card>
+          <Card><Card.Body>Open the following section to register yourself as employe!</Card.Body></Card>
           <Card>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="0">
-                OPEN/COLSE Add Employee!
+                OPEN/COLSE Register as Employee!
               </Accordion.Toggle>
             </Card.Header>
               <Accordion.Collapse eventKey="0">
@@ -20,11 +20,6 @@ render() {
                   <div class="container-fluid">
                     <form>
                       <p> </p>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Eth Account</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" e.g.: 0x05B4ca3F7DF84237d8047C24775D406f1157d2Ba" />
-                        <small id="emailHelp" class="form-text text-muted">Enter Ethereum adress's employee</small>
-                      </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Employee Name</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: Mario" />
@@ -43,7 +38,7 @@ render() {
                       <div class="form-group">
                         <label for="exampleInputPassword1">Financial Power: Stake Employee Baget [ETH]</label>
                         <input type="number" class="form-control" id="exampleInputPassword1" placeholder="e.g.: 20 ETH" />
-                        <small id="emailHelp" class="form-text text-muted">To create a an employer with X financial power you have to stake X ETH and you get Y Approval Matrix Token. Approval Matrix token is the token used to pay your employees.</small>
+                        <small id="emailHelp" class="form-text text-muted">To register yourself as an employer with X financial power you have to stake X ETH and you get Y Approval Matrix Token. Approval Matrix token is the token used to pay task ad it's needed to accept task created by other users.</small>
                       </div>
                       <p>
                         <div class="form-check">

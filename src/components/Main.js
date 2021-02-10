@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Accordion, Card, Button } from 'react-bootstrap';
 import ConnectionButton from './ConnectionButton';
 import LoadMetamaskText from './LoadMetamaskText';
+
+import Profile from './Profile';
 import AddEmployee from './AddEmployee';
 import AddTask from './AddTask';
 import Tasks from './Tasks';
@@ -16,6 +18,7 @@ render() {
 
     } else {
       content = <div>
+                  <p><Profile /></p>
                   <p><AddEmployee /></p>
                   <p><AddTask /></p>
                   <p><Tasks /></p>
