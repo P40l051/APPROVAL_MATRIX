@@ -31,10 +31,38 @@ contract('ApprovalMatrix', ([deployer, investor]) => {
       const name = await approvalMatrix.name()
       assert.equal(name, 'Approval Matrix')
     })
-
+    
+    it('contract rate correct', async () => {
+      const rate = await approvalMatrix.rate()
+      assert.equal(rate, '100')
+    })
+    it('contract adress is OK', async () => {
+      const address = await approvalMatrix.address
+      assert.notEqual(address, 0x0)
+      assert.notEqual(address, '')
+      assert.notEqual(address, null)
+      assert.notEqual(address, undefined)
+    })
     it('contract has tokens', async () => {
       let balance = await token.balanceOf(approvalMatrix.address)
       assert.equal(balance.toString(), tokens('1000000'))
+    })
+  })
+
+  describe('addEmployee()', async () => {
+
+    let result, employeeCount
+
+    before(async () => {
+      // Test add Employee
+      result = await approvalMatrix.AddEmployee('Paolo', 'ssjsj@gmail.com', 'Engineer', { from: investor, value: web3.utils.toWei('1', 'ether')});
+      employeeCount = await approvalMatrix.employeeCount()
+      console.log(result)
+    })
+
+    it('employeeCount is correct', async () => {
+      const address = await approvalMatrix.address
+      assert.equal(employeeCount, 1)
     })
   })
 })
