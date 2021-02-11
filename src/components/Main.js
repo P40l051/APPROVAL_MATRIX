@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Accordion, Card, Button } from 'react-bootstrap';
-import ConnectionButton from './ConnectionButton';
+
 import LoadMetamaskText from './LoadMetamaskText';
 
 import Profile from './Profile';

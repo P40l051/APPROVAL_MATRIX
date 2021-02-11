@@ -33,7 +33,7 @@ render() {
                       <div class="form-group">
                         <label for="exampleInputPassword1">Baget offered [AMT]</label>
                         <input type="number" class="form-control" id="exampleInputPassword1" placeholder="e.g.: 20 Approval Matrix Tokens" />
-                        <small id="emailHelp" class="form-text text-muted">Approval Matrix token is the token used to pay for tasks. Also users accepting the task have to stake same amount of Appruval Matrix Tokens and they get it back when task is completed and verified by both sides.</small>
+                        <small id="emailHelp" class="form-text text-muted">Approval Matrix token is the token used to pay for tasks. Users accepting the task have to stake same amount of Appruval Matrix Tokens and they get it back when task is completed and verified by both sides.</small>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Task description</label>
