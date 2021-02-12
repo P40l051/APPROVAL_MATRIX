@@ -9,7 +9,7 @@ function tokens(n) {
   return web3.utils.toWei(n, 'ether');
 }
 
-contract('ApprovalMatrix', ([deployer, investor]) => {
+contract('ApprovalMatrix', ([deployer, investor1, investor2]) => {
   let token, approvalMatrix
 
   before(async () => {
@@ -49,20 +49,34 @@ contract('ApprovalMatrix', ([deployer, investor]) => {
     })
   })
 
-  describe('addEmployee()', async () => {
+  describe('TEST addEmployee() function', async () => {
 
-    let result, employeeCount
+    let result1, employeeCount, approvalMatrixBalance, employee
 
     before(async () => {
       // Test add Employee
-      result = await approvalMatrix.AddEmployee('Paolo', 'ssjsj@gmail.com', 'Engineer', { from: investor, value: web3.utils.toWei('1', 'ether')});
+      result1 = await approvalMatrix.AddEmployee('Paolo', 'paolo.tancredi89@gmail.com', 'Engineer', { from: investor1, value: web3.utils.toWei('1', 'ether')});
+      approvalMatrixBalance = await token.balanceOf(approvalMatrix.address)
+      investor1Balance = await token.balanceOf(investor1)
       employeeCount = await approvalMatrix.employeeCount()
-      console.log(result)
     })
 
     it('employeeCount is correct', async () => {
-      const address = await approvalMatrix.address
       assert.equal(employeeCount, 1)
+    })
+    it('Check Approval Matrix balance after added employee', async () => {
+      assert.equal(approvalMatrixBalance.toString(), tokens('999900'))
+    })
+    it('Check investor1 balance after added employee', async () => {
+      assert.equal(investor1Balance.toString(), tokens('100'))
+    })
+    it('TEST EVENT EMITTED', async () => {
+      assert.equal(result1.logs[0].args._id.toString(), 1, 'employee _id is correct')
+      assert.equal(result1.logs[0].args._account, investor1, '_account is correct')
+      assert.equal(result1.logs[0].args._employeeName, 'Paolo','_employeeName is correct' )
+      assert.equal(result1.logs[0].args._employeeEmail, 'paolo.tancredi89@gmail.com', '_employeeEmail is correct')
+      assert.equal(result1.logs[0].args._employeeRole, 'Engineer', '_employeeRole is correct')
+      assert.equal(result1.logs[0].args._employeePower.toString(), tokens('100'), '_employeePower is correct')
     })
   })
 })

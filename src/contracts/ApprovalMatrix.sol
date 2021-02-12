@@ -22,7 +22,7 @@ contract ApprovalMatrix {
     }
 
     event employeeAdded(
-            uint id,
+            uint _id,
     	    address _account,
     	    string _employeeName,
     	    string _employeeEmail,
