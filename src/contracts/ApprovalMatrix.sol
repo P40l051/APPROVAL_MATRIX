@@ -13,7 +13,7 @@ contract ApprovalMatrix {
     uint public employeeCount;
 
     struct EmployeeMatrix {
-        uint id;
+        uint Id;
         address EmployerAdress;
         string EmployeeName;
         string EmployeeEmail;
@@ -23,7 +23,7 @@ contract ApprovalMatrix {
 
     event employeeAdded(
             uint _id,
-    	    address _account,
+    	    address _employerAdress,
     	    string _employeeName,
     	    string _employeeEmail,
     	    string _employeeRole,
