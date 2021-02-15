@@ -97,5 +97,11 @@ contract('ApprovalMatrix', ([deployer, investor1, investor2]) => {
       assert.equal(employee.EmployeeLocation, 'Roma', 'EmployeeRole is correct')
       assert.equal(employee.EmployeePower.toString(), tokens('100'), 'EmployeePower is correct')
     })
+      it('TEST Add second employee & test full matrix', async () => {
+      result2 = await approvalMatrix.AddEmployee( investor2,'Arturo', 'arturo@gmail.com','Product Manager', 'After-Sales', 'Milano', { from: investor1, value: web3.utils.toWei('1', 'ether')});
+      employeeCount = await approvalMatrix.employeeCount()
+      const employees = await approvalMatrix.employees(employeeCount)
+      console.log(employees)
+    })
   })
 })

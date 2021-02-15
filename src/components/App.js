@@ -89,6 +89,7 @@ class App extends Component {
             account={this.state.account} 
             tokenBalance={this.state.tokenBalance}
             ethBalance={this.state.ethBalance/1000000000000000000}
+            approvalMatrix={this.state.approvalMatrix}
             addEmployee={this.addEmployee}            
           />
         </div>

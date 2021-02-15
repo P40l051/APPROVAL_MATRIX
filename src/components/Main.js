@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import LoadMetamaskText from './LoadMetamaskText';
 
 import Profile from './Profile';
+import EmployeeList from './EmployeeList';
 import AddEmployee from './AddEmployee';
 import AddTask from './AddTask';
 import Tasks from './Tasks';
@@ -22,6 +23,7 @@ render() {
                           ethBalance={this.props.ethBalance}
                       />
                   </p>
+                  <p><EmployeeList approvalMatrix={this.props.approvalMatrix}/></p>
                   <p><AddEmployee addEmployee={this.props.addEmployee} /></p>
                   <p><AddTask /></p>
                   <p><Tasks /></p>

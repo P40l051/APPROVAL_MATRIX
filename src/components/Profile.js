@@ -23,12 +23,6 @@ render() {
                       </tr>
                     </tbody>
           </table>
-        <Card>
-          <Card.Body>
-            <Card.Title>My Profile</Card.Title>
-            <p><TestProfile /></p>
-          </Card.Body>
-        </Card>
       </div>
 	 );
 }
