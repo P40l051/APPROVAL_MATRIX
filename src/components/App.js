@@ -6,6 +6,7 @@ import Main from './Main';
 import MyNavbar from './MyNavbar';
 
 import Token from '../abis/Token.json'
+import ApprovalMatrix from '../abis/ApprovalMatrix.json'
 
 class App extends Component {
   async componentWillMount() {
@@ -35,6 +36,15 @@ class App extends Component {
       window.alert('Token contract not deployed to detected network.')
     }
 
+    // Load Approval Matrix
+    const approvalMatrixData = ApprovalMatrix.networks[networkId]
+    if(approvalMatrixData) {
+      const approvalMatrix = new web3.eth.Contract(ApprovalMatrix.abi, approvalMatrixData.address)
+      this.setState({ approvalMatrix })
+    } else {
+      window.alert('EthSwap contract not deployed to detected network.')
+    }
+
     this.setState({ loading: false })
   }
 
@@ -51,10 +61,20 @@ class App extends Component {
     }
   }
 
+  addEmployee = (_employerAdress, _employeeName, _employeeEmail, _employeeRole, _employeeDivision, _employeeLocation, _etherAmount) => {
+    this.setState({ loading: true })
+    this.state.approvalMatrix.methods.AddEmployee(_employerAdress, _employeeName, _employeeEmail, _employeeRole, _employeeDivision, _employeeLocation).send({ value: _etherAmount, from: this.state.account }).on('transactionHash', (hash) => {
+      this.setState({ loading: false })
+    })
+  }
+
+
   constructor(props) {
     super(props)
     this.state = {
       account: '',
+      token:{},
+      approvalMatrix:{},
       ethBalance: '0',
       tokenBalance: '0',
       loading: true
@@ -68,7 +88,8 @@ class App extends Component {
           <Main 
             account={this.state.account} 
             tokenBalance={this.state.tokenBalance}
-            ethBalance={this.state.ethBalance/1000000000000000000} 
+            ethBalance={this.state.ethBalance/1000000000000000000}
+            addEmployee={this.addEmployee}            
           />
         </div>
       </div>

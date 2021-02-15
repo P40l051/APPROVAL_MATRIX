@@ -19,10 +19,10 @@ render() {
       content = <div>
                   <p><Profile 
                           tokenBalance={this.props.tokenBalance} 
-                          ethBalance={this.props.ethBalance} 
+                          ethBalance={this.props.ethBalance}
                       />
                   </p>
-                  <p><AddEmployee /></p>
+                  <p><AddEmployee addEmployee={this.props.addEmployee} /></p>
                   <p><AddTask /></p>
                   <p><Tasks /></p>
                 </div>
