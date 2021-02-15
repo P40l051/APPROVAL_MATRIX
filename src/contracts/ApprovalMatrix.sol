@@ -14,19 +14,25 @@ contract ApprovalMatrix {
 
     struct EmployeeMatrix {
         uint Id;
+        address EmployerBossAdress;
         address EmployerAdress;
         string EmployeeName;
         string EmployeeEmail;
         string EmployeeRole;
+        string EmployeeDivision;
+        string EmployeeLocation;
         uint EmployeePower;
     }
 
     event employeeAdded(
             uint _id,
+            address _employerBossAdress,
     	    address _employerAdress,
     	    string _employeeName,
     	    string _employeeEmail,
-    	    string _employeeRole,
+            string _employeeRole,
+    	    string _employeeDivision,
+            string _employeeLocation,
     	    uint _employeePower
 
     );
@@ -35,8 +41,7 @@ contract ApprovalMatrix {
         token = _token;
     }
 
-
-    function AddEmployee(string memory _employeeName, string memory _employeeEmail, string memory _employeeRole) public payable {
+    function AddEmployee(address _employerAdress, string memory _employeeName, string memory _employeeEmail, string memory _employeeRole, string memory _employeeDivision, string memory _employeeLocation) public payable {
         // Calculate the number of tokens for Employer (i.e.: EmployeePower)
         uint tokenAmount = msg.value * rate;
         
@@ -44,15 +49,15 @@ contract ApprovalMatrix {
         require(token.balanceOf(address(this)) >= tokenAmount);
 
         // Transfer tokens to the user
-        token.transfer(msg.sender, tokenAmount);
+        token.transfer(_employerAdress, tokenAmount);
 
         //increment employees count
         employeeCount ++;
 
         //Add the employer profile to the contract
-        employees[employeeCount] = EmployeeMatrix(employeeCount, msg.sender, _employeeName, _employeeEmail, _employeeRole, tokenAmount);
+        employees[employeeCount] = EmployeeMatrix(employeeCount, msg.sender, _employerAdress, _employeeName, _employeeEmail, _employeeRole,_employeeDivision, _employeeLocation, tokenAmount);
 
         // Trigger event
-        emit employeeAdded(employeeCount, msg.sender, _employeeName, _employeeEmail, _employeeRole, tokenAmount);
+        emit employeeAdded(employeeCount, msg.sender, _employerAdress, _employeeName, _employeeEmail, _employeeRole, _employeeDivision, _employeeLocation, tokenAmount);
     }
 }
