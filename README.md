@@ -37,6 +37,7 @@ Instruction:
 
 from a new terminal window:
 - npm install
+- go to migrations/2_deploy_contracts to allocate initial token distribution properly
 - truffle compile
 - truffle migrate --reset
 - npm run start

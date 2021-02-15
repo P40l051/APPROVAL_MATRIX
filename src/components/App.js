@@ -5,6 +5,7 @@ import Web3 from 'web3'
 import Main from './Main';
 import MyNavbar from './MyNavbar';
 
+import Token from '../abis/Token.json'
 
 class App extends Component {
   async componentWillMount() {
@@ -18,7 +19,21 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
 
+    const ethBalance = await web3.eth.getBalance(this.state.account)
+    this.setState({ ethBalance })
+
     const networkId = await web3.eth.net.getId()
+
+        // Load Token
+    const tokenData = Token.networks[networkId]
+    if(tokenData) {
+      const token = new web3.eth.Contract(Token.abi, tokenData.address)
+      this.setState({ token })
+      let tokenBalance = await token.methods.balanceOf(this.state.account).call()
+      this.setState({ tokenBalance: tokenBalance.toString() })
+    } else {
+      window.alert('Token contract not deployed to detected network.')
+    }
 
     this.setState({ loading: false })
   }
@@ -40,6 +55,8 @@ class App extends Component {
     super(props)
     this.state = {
       account: '',
+      ethBalance: '0',
+      tokenBalance: '0',
       loading: true
     }
   }
@@ -48,7 +65,11 @@ class App extends Component {
       <div>
         <MyNavbar account={this.state.account}/>
         <div className="container-fluid mt-5">
-          <Main account={this.state.account}/>
+          <Main 
+            account={this.state.account} 
+            tokenBalance={this.state.tokenBalance}
+            ethBalance={this.state.ethBalance/1000000000000000000} 
+          />
         </div>
       </div>
     );

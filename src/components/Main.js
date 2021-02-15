@@ -17,7 +17,11 @@ render() {
 
     } else {
       content = <div>
-                  <p><Profile /></p>
+                  <p><Profile 
+                          tokenBalance={this.props.tokenBalance} 
+                          ethBalance={this.props.ethBalance} 
+                      />
+                  </p>
                   <p><AddEmployee /></p>
                   <p><AddTask /></p>
                   <p><Tasks /></p>

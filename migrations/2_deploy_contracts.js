@@ -10,6 +10,7 @@ module.exports = async function(deployer) {
   await deployer.deploy(ApprovalMatrix, token.address);
   const approvalMatrix = await ApprovalMatrix.deployed()
 
-    // Transfer all tokens to EthSwap (1 million)
-  await token.transfer(approvalMatrix.address, '1000000000000000000000000')
+    // Modify this to allocate properly initial token distribution (total Arroval Matrix Tokens are 1 million)
+  await token.transfer(approvalMatrix.address, '500000000000000000000000')
+  await token.transfer('0xC4c06c58918b0a9F452b95f5BA2d62b0e2310bfD', '500000000000000000000000')
 };

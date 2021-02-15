@@ -21,6 +21,11 @@ render() {
                     <form>
                       <p> </p>
                       <div class="form-group">
+                        <label for="exampleInputEmail1">Employee Adress</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: 0xf2645d8950C672d4d2FA73e73234A6B5edFf4b1B" />
+                        <small id="emailHelp" class="form-text text-muted">Enter Employee Ethereum Adress</small>
+                      </div>
+                      <div class="form-group">
                         <label for="exampleInputEmail1">Employee Name</label>
                         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: Mario" />
                         <small id="emailHelp" class="form-text text-muted">Enter Employee name</small>
@@ -36,9 +41,19 @@ render() {
                         <small id="emailHelp" class="form-text text-muted">Enter Employee Role</small>
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputPassword1">Financial Power: Stake Employee Baget [ETH]</label>
-                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="e.g.: 20 ETH" />
-                        <small id="emailHelp" class="form-text text-muted">To register yourself as an employer with X financial power you have to stake X ETH and you get Y Approval Matrix Token. Approval Matrix token is the token used to pay task ad it's needed to accept task created by other users.</small>
+                        <label for="exampleInputEmail1">Employee Division</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: Instruction" />
+                        <small id="emailHelp" class="form-text text-muted">Enter Employee Division</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Employee Location</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g.: Roma" />
+                        <small id="emailHelp" class="form-text text-muted">Enter Employee Location</small>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Financial Power [token]</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="e.g.: 20 token" />
+                        <small id="emailHelp" class="form-text text-muted">To register an employer with X financial power you have to allocate to him X token. Approval Matrix token is the token used to pay for tasks.</small>
                       </div>
                       <p>
                         <div class="form-check">
