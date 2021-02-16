@@ -14,9 +14,7 @@ class ConnectionButton extends Component {
 
 render() {
     return (
-      <div>
         <Button variant="secondary" onClick={this.refreshPage}>Load Metamask!</Button>
-      </div>
 	 );
 }
 }

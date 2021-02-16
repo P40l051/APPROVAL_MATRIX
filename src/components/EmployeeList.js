@@ -27,15 +27,15 @@ const employees = [
 const EmployeeProfile = () => (
     <div>
         {employees.map(profile => (
-            <ListGroup>
-                <ListGroup.Item>ID: {profile.id}</ListGroup.Item>
-                <ListGroup.Item>ETH Adress: {profile.profileAdress}</ListGroup.Item>
-                <ListGroup.Item>Name: {profile.profileName}</ListGroup.Item>
-                <ListGroup.Item>Email: {profile.profileEmail}</ListGroup.Item>
-                <ListGroup.Item>Role: {profile.profileRole}</ListGroup.Item>
-                <ListGroup.Item>Role: {profile.profileDivision}</ListGroup.Item>
-                <ListGroup.Item>Role: {profile.profileLocation}</ListGroup.Item>
-                <ListGroup.Item>Power: {profile.profilePower}</ListGroup.Item>
+            <ListGroup key={profile.id}>
+                    <ListGroup.Item>ID: {profile.id}</ListGroup.Item>
+                    <ListGroup.Item>ETH Adress: {profile.profileAdress}</ListGroup.Item>
+                    <ListGroup.Item>Name: {profile.profileName}</ListGroup.Item>
+                    <ListGroup.Item>Email: {profile.profileEmail}</ListGroup.Item>
+                    <ListGroup.Item>Role: {profile.profileRole}</ListGroup.Item>
+                    <ListGroup.Item>Role: {profile.profileDivision}</ListGroup.Item>
+                    <ListGroup.Item>Role: {profile.profileLocation}</ListGroup.Item>
+                    <ListGroup.Item>Power: {profile.profilePower}</ListGroup.Item>
             </ListGroup>
         ))}
     </div>

@@ -17,52 +17,52 @@ render() {
             </Card.Header>
               <Accordion.Collapse eventKey="0">
                 <Card.Body>
-                  <div class="container-fluid">
+                  <div className="container-fluid">
                     <form onSubmit={(event) => {
                       event.preventDefault()
                       this.props.addEmployee('0xf2645d8950C672d4d2FA73e73234A6B5edFf4b1B','Paolo', 'paolo.tancredi89@gmail.com','Product Specialist', 'Sales', 'Roma','10')
                       console.log('Submit clicked!')
                     }}>
                       <p> </p>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Employee Adress</label>
-                        <input type="text" class="form-control" id="_employerAdress" aria-describedby="emailHelp" placeholder="e.g.: 0xf2645d8950C672d4d2FA73e73234A6B5edFf4b1B" />
-                        <small id="emailHelp" class="form-text text-muted">Enter Employee Ethereum Adress</small>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Employee Adress</label>
+                        <input type="text" className="form-control" id="_employerAdress" aria-describedby="emailHelp" placeholder="e.g.: 0xf2645d8950C672d4d2FA73e73234A6B5edFf4b1B" />
+                        <small id="emailHelp" className="form-text text-muted">Enter Employee Ethereum Adress</small>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Employee Name</label>
-                        <input type="text" class="form-control" id="_employeeName" aria-describedby="emailHelp" placeholder="e.g.: Mario" />
-                        <small id="emailHelp" class="form-text text-muted">Enter Employee name</small>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Employee Name</label>
+                        <input type="text" className="form-control" id="_employeeName" aria-describedby="emailHelp" placeholder="e.g.: Mario" />
+                        <small id="emailHelp" className="form-text text-muted">Enter Employee name</small>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="_employeeEmail" aria-describedby="emailHelp" placeholder="e.g.: mario@gmail.com" />
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Email address</label>
+                        <input type="email" className="form-control" id="_employeeEmail" aria-describedby="emailHelp" placeholder="e.g.: mario@gmail.com" />
+                        <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Employee Role</label>
-                        <input type="text" class="form-control" id="_employeeRole" aria-describedby="emailHelp" placeholder="e.g.: Senior Teacher" />
-                        <small id="emailHelp" class="form-text text-muted">Enter Employee Role</small>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Employee Role</label>
+                        <input type="text" className="form-control" id="_employeeRole" aria-describedby="emailHelp" placeholder="e.g.: Senior Teacher" />
+                        <small id="emailHelp" className="form-text text-muted">Enter Employee Role</small>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Employee Division</label>
-                        <input type="text" class="form-control" id="_employeeDivision" aria-describedby="emailHelp" placeholder="e.g.: Instruction" />
-                        <small id="emailHelp" class="form-text text-muted">Enter Employee Division</small>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Employee Division</label>
+                        <input type="text" className="form-control" id="_employeeDivision" aria-describedby="emailHelp" placeholder="e.g.: Instruction" />
+                        <small id="emailHelp" className="form-text text-muted">Enter Employee Division</small>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Employee Location</label>
-                        <input type="text" class="form-control" id="_employeeLocation" aria-describedby="emailHelp" placeholder="e.g.: Roma" />
-                        <small id="emailHelp" class="form-text text-muted">Enter Employee Location</small>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">Employee Location</label>
+                        <input type="text" className="form-control" id="_employeeLocation" aria-describedby="emailHelp" placeholder="e.g.: Roma" />
+                        <small id="emailHelp" className="form-text text-muted">Enter Employee Location</small>
                       </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Financial Power [token]</label>
+                      <div className="form-group">
+                        <label htmlFor="exampleInputPassword1">Financial Power [token]</label>
 
                         <input 
                           type="number"
-                          class="form-control" id="_etherAmount"
+                          className="form-control" id="_etherAmount"
                           placeholder="e.g.: 20 token" 
                         />
-                        <small id="emailHelp" class="form-text text-muted">To register an employer with X financial power you have to allocate to him X token. Approval Matrix token is the token used to pay for tasks.</small>
+                        <small id="emailHelp" className="form-text text-muted">To register an employer with X financial power you have to allocate to him X token. Approval Matrix token is the token used to pay for tasks.</small>
                       </div>
                       <Button type="submit">Submit & Stake </Button>
                     </form>

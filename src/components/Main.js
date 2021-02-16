@@ -18,15 +18,15 @@ render() {
 
     } else {
       content = <div>
-                  <p><Profile 
+                  <Profile 
                           tokenBalance={this.props.tokenBalance} 
                           ethBalance={this.props.ethBalance}
-                      />
-                  </p>
-                  <p><EmployeeList approvalMatrix={this.props.approvalMatrix}/></p>
-                  <p><AddEmployee addEmployee={this.props.addEmployee} /></p>
-                  <p><AddTask /></p>
-                  <p><Tasks /></p>
+                  />
+                  
+                  <EmployeeList approvalMatrix={this.props.approvalMatrix}/>
+                  <AddEmployee addEmployee={this.props.addEmployee} />
+                  <AddTask />
+                  <Tasks />
                 </div>
     }
 

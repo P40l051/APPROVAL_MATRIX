@@ -18,7 +18,7 @@ render() {
             </Card.Header>
               <Accordion.Collapse eventKey="0">
                 <Card.Body>
-                  <div class="container-fluid">
+                  <div className="container-fluid">
                       <TestTaskList />
                   </div>
                 </Card.Body>

@@ -4068,104 +4068,6 @@
   "networks": {
     "5777": {
       "events": {
-        "0x055c8e3bd4f757dc019d75e2edc6811bbd87cef97ef20dc80a53506e34a94a4a": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "_id",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "_employerAdress",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "string",
-              "name": "_employeeName",
-              "type": "string"
-            },
-            {
-              "indexed": false,
-              "internalType": "string",
-              "name": "_employeeEmail",
-              "type": "string"
-            },
-            {
-              "indexed": false,
-              "internalType": "string",
-              "name": "_employeeRole",
-              "type": "string"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "_employeePower",
-              "type": "uint256"
-            }
-          ],
-          "name": "employeeAdded",
-          "type": "event"
-        },
-        "0x482a5dfe0d02ba1acd874799e171c0a00c58f98e683c89aebe14b2c29b6cb512": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "_id",
-              "type": "uint256"
-            },
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "_employerBossAdress",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "address",
-              "name": "_employerAdress",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "string",
-              "name": "_employeeName",
-              "type": "string"
-            },
-            {
-              "indexed": false,
-              "internalType": "string",
-              "name": "_employeeEmail",
-              "type": "string"
-            },
-            {
-              "indexed": false,
-              "internalType": "string",
-              "name": "_employeeDivision",
-              "type": "string"
-            },
-            {
-              "indexed": false,
-              "internalType": "string",
-              "name": "_employeeLocation",
-              "type": "string"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "_employeePower",
-              "type": "uint256"
-            }
-          ],
-          "name": "employeeAdded",
-          "type": "event"
-        },
         "0xe8ba940443613b1b92c773deb3a35ff97ea5a5a4c46da2facc0f59ef1fbdafc4": {
           "anonymous": false,
           "inputs": [
@@ -4229,12 +4131,12 @@
         }
       },
       "links": {},
-      "address": "0x8Ec48a58321723d3d51Afa6304F0E724857fE760",
-      "transactionHash": "0x0ef6426fce7eb441e9d55026678b1c9661f3a4b3c5286916ff262c2aa0bda987"
+      "address": "0xC93dC39159AcA4fbff7F83eB9FD0ba5311329118",
+      "transactionHash": "0xcb96794f6efe3ae61a2ea04f75ed26fbed45fe9d9c65ec7c5babf801431552e2"
     }
   },
   "schemaVersion": "3.2.5",
-  "updatedAt": "2021-02-15T15:26:20.440Z",
+  "updatedAt": "2021-02-16T10:40:16.146Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
