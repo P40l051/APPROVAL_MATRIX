@@ -11,7 +11,6 @@ import Tasks from './Tasks';
 class Main extends Component {
 
 render() {
-
     let content
     if(!this.props.account) {
       content = <LoadMetamaskText />
@@ -23,7 +22,7 @@ render() {
                           ethBalance={this.props.ethBalance}
                   />
                   
-                  <EmployeeList approvalMatrix={this.props.approvalMatrix}/>
+                  <EmployeeList employees={this.props.employees}/>
                   <AddEmployee addEmployee={this.props.addEmployee} />
                   <AddTask />
                   <Tasks />

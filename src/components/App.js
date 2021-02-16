@@ -41,6 +41,16 @@ class App extends Component {
     if(approvalMatrixData) {
       const approvalMatrix = new web3.eth.Contract(ApprovalMatrix.abi, approvalMatrixData.address)
       this.setState({ approvalMatrix })
+      const employeesCount = await approvalMatrix.methods.employeeCount().call()
+      this.setState({ employeesCount })
+
+    // Load employees, sort by newest
+    for (var i=employeesCount; i>=1; i--){
+      const employee = await approvalMatrix.methods.employees(i).call()
+        this.setState({
+          employees: [...this.state.employees, employee]
+        })  
+    }
     } else {
       window.alert('EthSwap contract not deployed to detected network.')
     }
@@ -75,6 +85,7 @@ class App extends Component {
       account: '',
       token:{},
       approvalMatrix:{},
+      employees: [],
       ethBalance: '0',
       tokenBalance: '0',
       loading: true
@@ -86,10 +97,10 @@ class App extends Component {
         <MyNavbar account={this.state.account}/>
         <div className="container-fluid mt-5">
           <Main 
-            account={this.state.account} 
+            account={this.state.account}
             tokenBalance={this.state.tokenBalance}
             ethBalance={this.state.ethBalance/1000000000000000000}
-            approvalMatrix={this.state.approvalMatrix}
+            employees={this.state.employees}
             addEmployee={this.addEmployee}            
           />
         </div>

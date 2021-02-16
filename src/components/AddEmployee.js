@@ -20,7 +20,7 @@ render() {
                   <div className="container-fluid">
                     <form onSubmit={(event) => {
                       event.preventDefault()
-                      this.props.addEmployee('0xf2645d8950C672d4d2FA73e73234A6B5edFf4b1B','Paolo', 'paolo.tancredi89@gmail.com','Product Specialist', 'Sales', 'Roma','10')
+                      this.props.addEmployee('0xA8e8bc8Bd51D1d279D4b090D3Ae009D96c69AED3','Giorgio', 'giorgio@gmail.com','Product Manager', 'After-Sales', 'Livorno','9')
                       console.log('Submit clicked!')
                     }}>
                       <p> </p>
