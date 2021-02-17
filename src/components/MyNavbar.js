@@ -15,7 +15,7 @@ render() {
 
     } else {
       content =
-        <Navbar expand="xl" bg="dark" variant="dark">
+        <Navbar expand="lg" bg="dark" variant="dark" >
           <Navbar.Brand href="#home">Approval Matrix</Navbar.Brand>
            <Nav className="mr-auto">
              <Navbar.Collapse id="responsive-navbar-nav">
