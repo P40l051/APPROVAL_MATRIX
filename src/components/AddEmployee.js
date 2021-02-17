@@ -36,7 +36,7 @@ render() {
     return (
       <div>
         <Accordion>
-          <Card><Card.Body>Open the following section to register yourself as employe!</Card.Body></Card>
+          <Card><Card.Body>Open the following section to register an employee!</Card.Body></Card>
           <Card>
             <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="0">

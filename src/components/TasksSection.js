@@ -8,18 +8,16 @@ import AddEmployee from './AddEmployee';
 import AddTask from './AddTask';
 import Tasks from './Tasks';
 
-class Main extends Component {
+class TasksSection extends Component {
 
   render() {
     return (
         <div>
           <Profile tokenBalance={this.props.tokenBalance} ethBalance={this.props.ethBalance} />
-          <EmployeeList employees={this.props.employees}/>
-          <AddEmployee addEmployee={this.props.addEmployee} />
           <AddTask />
           <Tasks />
         </div>
   	 );
   }
 }
-export default Main;
+export default TasksSection;

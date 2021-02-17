@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 
 import Web3 from 'web3'
 
-import Main from './Main';
+
 import MyNavbar from './MyNavbar';
 import Home from './Home';
-
+import EmployeeSection from './EmployeeSection';
+import TasksSection from './TasksSection';
 
 import Token from '../abis/Token.json'
 import ApprovalMatrix from '../abis/ApprovalMatrix.json'
@@ -109,13 +110,20 @@ class App extends Component {
           <Route exact path="/">
             <Home account={this.state.account} />
           </Route>
-          <Route exact path="/main">
-            <Main 
+          <Route exact path="/employee">
+            <EmployeeSection 
               account={this.state.account}
               tokenBalance={this.state.tokenBalance}
               ethBalance={this.state.ethBalance/1000000000000000000}
               employees={this.state.employees}
               addEmployee={this.addEmployee}            
+            />
+          </Route>
+          <Route exact path="/tasks">
+            <TasksSection 
+              account={this.state.account}
+              tokenBalance={this.state.tokenBalance}
+              ethBalance={this.state.ethBalance/1000000000000000000}           
             />
           </Route>
           </div>

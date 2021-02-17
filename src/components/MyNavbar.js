@@ -20,7 +20,8 @@ render() {
            <Nav className="mr-auto">
              <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/main">Main</Nav.Link>
+                <Nav.Link href="/employee">Employee</Nav.Link>
+                <Nav.Link href="/tasks">Tasks</Nav.Link>
             </Navbar.Collapse>
           </Nav>
           <Nav>
