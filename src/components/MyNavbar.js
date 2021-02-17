@@ -10,18 +10,17 @@ render() {
     if(!this.props.account) {
       content =         
         <Navbar expand="md" bg="dark" variant="dark">
-          <Navbar.Brand href="#home">Approval Matrix</Navbar.Brand>
+          <Navbar.Brand href="/">Approval Matrix</Navbar.Brand>
         </Navbar>
 
     } else {
       content =
         <Navbar expand="lg" bg="dark" variant="dark" >
-          <Navbar.Brand href="#home">Approval Matrix</Navbar.Brand>
+          <Navbar.Brand href="/">Approval Matrix</Navbar.Brand>
            <Nav className="mr-auto">
              <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav.Link href="#My Profile">My Profile</Nav.Link>
-                <Nav.Link href="#Docs">Docs</Nav.Link>
-                <Nav.Link href="#White paper">White paper</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/main">Main</Nav.Link>
             </Navbar.Collapse>
           </Nav>
           <Nav>

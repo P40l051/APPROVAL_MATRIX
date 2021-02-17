@@ -4,9 +4,19 @@ import Web3 from 'web3'
 
 import Main from './Main';
 import MyNavbar from './MyNavbar';
+import Home from './Home';
+
 
 import Token from '../abis/Token.json'
 import ApprovalMatrix from '../abis/ApprovalMatrix.json'
+
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 class App extends Component {
   async componentWillMount() {
@@ -93,18 +103,23 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <MyNavbar account={this.state.account}/>
-        <div className="container-fluid mt-5">
-          <Main 
-            account={this.state.account}
-            tokenBalance={this.state.tokenBalance}
-            ethBalance={this.state.ethBalance/1000000000000000000}
-            employees={this.state.employees}
-            addEmployee={this.addEmployee}            
-          />
-        </div>
-      </div>
+      <BrowserRouter>
+          <MyNavbar account={this.state.account}/>
+          <div className="container-fluid mt-5">
+          <Route exact path="/">
+            <Home account={this.state.account} />
+          </Route>
+          <Route exact path="/main">
+            <Main 
+              account={this.state.account}
+              tokenBalance={this.state.tokenBalance}
+              ethBalance={this.state.ethBalance/1000000000000000000}
+              employees={this.state.employees}
+              addEmployee={this.addEmployee}            
+            />
+          </Route>
+          </div>
+      </BrowserRouter>
     );
   }
 }

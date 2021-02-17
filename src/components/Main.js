@@ -10,30 +10,16 @@ import Tasks from './Tasks';
 
 class Main extends Component {
 
-render() {
-    let content
-    if(!this.props.account) {
-      content = <LoadMetamaskText />
-
-    } else {
-      content = <div>
-                  <Profile 
-                          tokenBalance={this.props.tokenBalance} 
-                          ethBalance={this.props.ethBalance}
-                  />
-                  
-                  <EmployeeList employees={this.props.employees}/>
-                  <AddEmployee addEmployee={this.props.addEmployee} />
-                  <AddTask />
-                  <Tasks />
-                </div>
-    }
-
+  render() {
     return (
-      <div>
-       {content}
-      </div>
-	 );
-}
+        <div>
+          <Profile tokenBalance={this.props.tokenBalance} ethBalance={this.props.ethBalance} />
+          <EmployeeList employees={this.props.employees}/>
+          <AddEmployee addEmployee={this.props.addEmployee} />
+          <AddTask />
+          <Tasks />
+        </div>
+  	 );
+  }
 }
 export default Main;
