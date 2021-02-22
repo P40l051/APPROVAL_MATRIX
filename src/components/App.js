@@ -82,10 +82,12 @@ class App extends Component {
     }
   }
 
-  addEmployee = (_employerAdress, _employeeName, _employeeEmail, _employeeRole, _employeeDivision, _employeeLocation, _etherAmount) => {
+  addEmployee = (_employerAddress, _employeeName, _employeeEmail, _employeeRole, _employeeDivision, _employeeLocation, _amount) => {
     this.setState({ loading: true })
-    this.state.approvalMatrix.methods.AddEmployee(_employerAdress, _employeeName, _employeeEmail, _employeeRole, _employeeDivision, _employeeLocation).send({ value: _etherAmount, from: this.state.account }).on('transactionHash', (hash) => {
-      this.setState({ loading: false })
+    this.state.token.methods.approve(this.state.approvalMatrix._address, _amount).send({ from: this.state.account }).on('transactionHash', (hash) => {
+      this.state.approvalMatrix.methods.AddEmployee(_employerAddress, _employeeName, _employeeEmail, _employeeRole, _employeeDivision, _employeeLocation).send({ value: _amount, from: this.state.account }).on('transactionHash', (hash) => {
+        this.setState({ loading: false })
+      })
     })
   }
 
@@ -114,7 +116,7 @@ class App extends Component {
             <EmployeeSection 
               account={this.state.account}
               tokenBalance={this.state.tokenBalance}
-              ethBalance={this.state.ethBalance/1000000000000000000}
+              ethBalance={this.state.ethBalance}
               employees={this.state.employees}
               addEmployee={this.addEmployee}            
             />
@@ -123,7 +125,7 @@ class App extends Component {
             <TasksSection 
               account={this.state.account}
               tokenBalance={this.state.tokenBalance}
-              ethBalance={this.state.ethBalance/1000000000000000000}           
+              ethBalance={this.state.ethBalance}           
             />
           </Route>
           </div>

@@ -21,14 +21,14 @@ class EmployeeProfile extends Component {
                             <div className="card mb-4 mx-auto" key={key}>
                               <ul className="list-group" >
                                 <li className="list-group-item">ID: {employee.Id}</li>
-                                <li className="list-group-item">Boss Adress: {employee.EmployerBossAdress}</li>
-                                <li className="list-group-item">Employer Adress: {employee.EmployerAdress}</li>
+                                <li className="list-group-item">Boss Address: {employee.EmployerBossAddress}</li>
+                                <li className="list-group-item">Employer Address: {employee.EmployerAddress}</li>
                                 <li className="list-group-item">Name: {employee.EmployeeName}</li>
                                 <li className="list-group-item">Email: {employee.EmployeeEmail}</li>
                                 <li className="list-group-item">Role: {employee.EmployeeRole}</li>
                                 <li className="list-group-item">Division: {employee.EmployeeDivision}</li>
                                 <li className="list-group-item">Location: {employee.EmployeeLocation}</li>
-                                <li className="list-group-item">Power: {employee.EmployeePower}</li>
+                                <li className="list-group-item">Initial Power: {employee.EmployeePower/1000000000000000000}</li>
                               </ul>
                             </div>
                           )

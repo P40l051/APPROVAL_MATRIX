@@ -18,8 +18,8 @@ render() {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{this.props.tokenBalance} token</td>
-                        <td>{this.props.ethBalance}</td>
+                        <td>{window.web3.utils.fromWei(this.props.tokenBalance, 'Ether')}</td>
+                        <td>{window.web3.utils.fromWei(this.props.ethBalance, 'Ether')}</td>
                       </tr>
                     </tbody>
           </table>

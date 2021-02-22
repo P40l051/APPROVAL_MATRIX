@@ -4,7 +4,7 @@ import { Accordion, Card, Button } from 'react-bootstrap';
 class AddEmployee extends Component {
   constructor(props) {
     super(props);
-    this.state = {_employerAdress: '', _employeeEmail: '', _employeeName: '', _employeeRole: '', _employeeDivision: '', _employeeLocation: '', _employeePower: '' };
+    this.state = {_employerAddress: '', _employeeEmail: '', _employeeName: '', _employeeRole: '', _employeeDivision: '', _employeeLocation: '', _employeePower: '' };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,12 +16,13 @@ class AddEmployee extends Component {
   } 
 
   handleSubmit(event){ 
-    const { _employerAdress, _employeeName, _employeeEmail, _employeeRole, _employeeDivision, _employeeLocation, _employeePower } = this.state 
-    this.props.addEmployee(this.state._employerAdress,this.state._employeeName, this.state._employeeEmail, this.state._employeeRole, this.state._employeeDivision, this.state._employeeLocation, this.state._employeePower)
+    const { _employerAddress, _employeeName, _employeeEmail, _employeeRole, _employeeDivision, _employeeLocation, _employeePower } = this.state 
+
+    this.props.addEmployee(this.state._employerAddress,this.state._employeeName, this.state._employeeEmail, this.state._employeeRole, this.state._employeeDivision, this.state._employeeLocation, this.state._employeePower)
     event.preventDefault() 
     alert(` Employee addes sucesfully!
       ____Employee Details____ 
-      Adress: ${_employerAdress}
+      Address: ${_employerAddress}
       Email : ${_employeeEmail} 
       Name : ${_employeeName} 
       Role : ${_employeeRole} 
@@ -49,9 +50,9 @@ render() {
                     <form onSubmit={this.handleSubmit}>
                       <p> </p>
                       <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Employee Adress</label>
-                        <input type="text" className="form-control" aria-describedby="emailHelp" placeholder="e.g.: 0xf2645d8950C672d4d2FA73e73234A6B5edFf4b1B" name='_employerAdress' value={this.state._employerAdress} onChange={this.handleChange} />
-                        <small id="emailHelp" className="form-text text-muted">Enter Employee Ethereum Adress</small>
+                        <label htmlFor="exampleInputEmail1">Employee Address</label>
+                        <input type="text" className="form-control" aria-describedby="emailHelp" placeholder="e.g.: 0xf2645d8950C672d4d2FA73e73234A6B5edFf4b1B" name='_employerAddress' value={this.state._employerAddress} onChange={this.handleChange} />
+                        <small id="emailHelp" className="form-text text-muted">Enter Employee Ethereum Address</small>
                       </div>
                       <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Employee Name</label>

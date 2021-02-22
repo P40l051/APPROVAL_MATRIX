@@ -16,7 +16,8 @@ contract('ApprovalMatrix', ([deployer, investor1, investor2]) => {
     token = await Token.new()
     approvalMatrix = await ApprovalMatrix.new(token.address)
     // Transfer all tokens to EthSwap (1 million)
-    await token.transfer(approvalMatrix.address, tokens('1000000'))
+    await token.transfer(approvalMatrix.address, tokens('500000'))
+    await token.transfer(investor1, tokens('500000'))
   })
 
   describe('Token deployment', async () => {
@@ -32,76 +33,78 @@ contract('ApprovalMatrix', ([deployer, investor1, investor2]) => {
       assert.equal(name, 'Approval Matrix')
     })
     
-    it('contract rate correct', async () => {
-      const rate = await approvalMatrix.rate()
-      assert.equal(rate, '100')
-    })
-    it('contract adress is OK', async () => {
+    it('contract address is OK', async () => {
       const address = await approvalMatrix.address
       assert.notEqual(address, 0x0)
       assert.notEqual(address, '')
       assert.notEqual(address, null)
       assert.notEqual(address, undefined)
     })
-    it('contract has tokens', async () => {
+    it('contract & investor1 have tokens', async () => {
       let balance = await token.balanceOf(approvalMatrix.address)
-      assert.equal(balance.toString(), tokens('1000000'))
+      let investor1balance =  await token.balanceOf(investor1)
+      assert.equal(balance.toString(), tokens('500000'))
+      assert.equal(investor1balance.toString(), tokens('500000'))
     })
   })
 
   describe('TEST addEmployee() function', async () => {
 
-    let result1, employeeCount, approvalMatrixBalance, employee
+    let result1, employeeCount, approvalMatrixBalance, investor1Balance, investor2Balance
 
     before(async () => {
-      // Test add Employee - Add investor2
 
-      result1 = await approvalMatrix.AddEmployee( investor2,'Paolo', 'paolo.tancredi89@gmail.com','Product Specialist', 'Sales', 'Roma', { from: investor1, value: web3.utils.toWei('1', 'ether')});
+      await token.approve(approvalMatrix.address, tokens('5'), {from: investor1} )
+      // Test add Employee - Add investor2
+      result1 = await approvalMatrix.AddEmployee( investor2,'Paolo', 'paolo.tancredi89@gmail.com','Product Specialist', 'Sales', 'Roma', { from: investor1, value: tokens('5') });
       approvalMatrixBalance = await token.balanceOf(approvalMatrix.address)
       investor1Balance = await token.balanceOf(investor1)
       investor2Balance = await token.balanceOf(investor2)
       employeeCount = await approvalMatrix.employeeCount()
     })
-
+    
     it('employeeCount is correct', async () => {
       assert.equal(employeeCount, 1)
-    })
-    it('Check Approval Matrix balance after added employee', async () => {
-      assert.equal(approvalMatrixBalance.toString(), tokens('999900'))
+    }) 
+    it('Check investor1 balance after added employee', async () => {
+      assert.equal(investor1Balance.toString(), tokens('499995'))
     })
     it('Check investor2 balance after added employee', async () => {
-      assert.equal(investor2Balance.toString(), tokens('100'))
-    })
+      assert.equal(investor2Balance.toString(), tokens('5'))
+    }) 
     it('TEST EVENT EMITTED', async () => {
       const event = result1.logs[0].args
       assert.equal(event._id.toString(), 1, 'employee _id is correct')
-      assert.equal(event._employerBossAdress, investor1, '_account is correct')
-      assert.equal(event._employerAdress, investor2, '_account is correct')
+      assert.equal(event._employerBossAddress, investor1, '_account is correct')
+      assert.equal(event._employerAddress, investor2, '_account is correct')
       assert.equal(event._employeeName, 'Paolo','_employeeName is correct' )
       assert.equal(event._employeeEmail, 'paolo.tancredi89@gmail.com', '_employeeEmail is correct')
       assert.equal(event._employeeRole, 'Product Specialist', '_employeeRole is correct')
       assert.equal(event._employeeDivision, 'Sales', '_employeeDivision is correct')
       assert.equal(event._employeeLocation, 'Roma', '_employeeLocation is correct')
-      assert.equal(event._employeePower.toString(), tokens('100'), '_employeePower is correct')
-    })
-//check struct
+      assert.equal(event._employeePower.toString(), tokens('5'), '_employeePower is correct')
+    }) 
+        //check struct
       it('TEST STRUCT EmployeeMatrix', async () => {
       const employee = await approvalMatrix.employees(employeeCount)
       assert.equal(employee.Id.toString(), employeeCount.toString(), 'id is correct')
-      assert.equal(employee.EmployerBossAdress, investor1, 'EmployerBossAdress is correct')
-      assert.equal(employee.EmployerAdress, investor2, 'EmployerAdress is correct')
+      assert.equal(employee.EmployerBossAddress, investor1, 'EmployerBossAddress is correct')
+      assert.equal(employee.EmployerAddress, investor2, 'EmployerAddress is correct')
       assert.equal(employee.EmployeeName, 'Paolo','EmployeeName is correct' )
       assert.equal(employee.EmployeeEmail, 'paolo.tancredi89@gmail.com', 'EmployeeEmail is correct')
       assert.equal(employee.EmployeeRole, 'Product Specialist', 'EmployeeRole is correct')
       assert.equal(employee.EmployeeDivision, 'Sales', 'EmployeeRole is correct')
       assert.equal(employee.EmployeeLocation, 'Roma', 'EmployeeRole is correct')
-      assert.equal(employee.EmployeePower.toString(), tokens('100'), 'EmployeePower is correct')
-    })
+      assert.equal(employee.EmployeePower.toString(), tokens('5'), 'EmployeePower is correct')
+    }) 
       it('TEST Add second employee & test full matrix', async () => {
-      result2 = await approvalMatrix.AddEmployee( investor2,'Arturo', 'arturo@gmail.com','Product Manager', 'After-Sales', 'Milano', { from: investor1, value: web3.utils.toWei('1', 'ether')});
+
+      await token.approve(approvalMatrix.address, tokens('1'), {from: investor1} )
+      result2 = await approvalMatrix.AddEmployee( investor2,'Arturo', 'arturo@gmail.com','Product Manager', 'After-Sales', 'Milano', { from: investor1, value: tokens('1') });
       employeeCount = await approvalMatrix.employeeCount()
-      const employees = await approvalMatrix.employees(employeeCount)
-      console.log(employees)
-    })
+    }) 
+      it('employeeCount is correct', async () => {
+      assert.equal(employeeCount, 2)
+    }) 
   })
 })
