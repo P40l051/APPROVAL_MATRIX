@@ -45,8 +45,9 @@ contract ApprovalMatrix {
         // Require that Creator has enough tokens
         require(token.balanceOf(msg.sender) >= msg.value);
 
-        // Transfer tokens to the user
+        // Transfer tokens to new Employee
         token.transferFrom(msg.sender, _employerAddress, msg.value);
+        msg.sender.transfer(msg.value);
 
         //increment employees count
         employeeCount ++;

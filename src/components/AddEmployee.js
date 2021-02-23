@@ -17,8 +17,8 @@ class AddEmployee extends Component {
 
   handleSubmit(event){ 
     const { _employerAddress, _employeeName, _employeeEmail, _employeeRole, _employeeDivision, _employeeLocation, _employeePower } = this.state 
-
-    this.props.addEmployee(this.state._employerAddress,this.state._employeeName, this.state._employeeEmail, this.state._employeeRole, this.state._employeeDivision, this.state._employeeLocation, this.state._employeePower)
+    let _amount = window.web3.utils.toWei(_employeePower, 'Ether')
+    this.props.addEmployee(this.state._employerAddress,this.state._employeeName, this.state._employeeEmail, this.state._employeeRole, this.state._employeeDivision, this.state._employeeLocation, _amount)
     event.preventDefault() 
     alert(` Employee addes sucesfully!
       ____Employee Details____ 

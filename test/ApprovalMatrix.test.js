@@ -50,16 +50,33 @@ contract('ApprovalMatrix', ([deployer, investor1, investor2]) => {
 
   describe('TEST addEmployee() function', async () => {
 
-    let result1, employeeCount, approvalMatrixBalance, investor1Balance, investor2Balance
+    let result1, employeeCount, approvalMatrixBalance, investor1Balance, investor2Balance, ethapprovalMatrixBalance, ethinvestor1Balance
 
     before(async () => {
-
       await token.approve(approvalMatrix.address, tokens('5'), {from: investor1} )
       // Test add Employee - Add investor2
+      ethapprovalMatrixBalance = await web3.eth.getBalance(approvalMatrix.address)
+      console.log('-----------------------------')
+      console.log('BEFORE -  ETHapprovalMatrixBalance:')
+      console.log(ethapprovalMatrixBalance)
+       console.log('-----------------------------')
+
       result1 = await approvalMatrix.AddEmployee( investor2,'Paolo', 'paolo.tancredi89@gmail.com','Product Specialist', 'Sales', 'Roma', { from: investor1, value: tokens('5') });
       approvalMatrixBalance = await token.balanceOf(approvalMatrix.address)
       investor1Balance = await token.balanceOf(investor1)
       investor2Balance = await token.balanceOf(investor2)
+      ethapprovalMatrixBalance = await web3.eth.getBalance(approvalMatrix.address)
+      ethinvestor1Balance = await web3.eth.getBalance(investor1)
+      console.log('-----------------------------')
+      console.log(' - AFTER - ETHapprovalMatrixBalance:')
+      console.log(ethapprovalMatrixBalance)
+       console.log('-----------------------------')
+      console.log(' approvalMatrixBalance:')
+      console.log(approvalMatrixBalance.toString())
+      console.log('-----------------------------')
+      console.log(' ETHinvestor1Balance:')
+      console.log(ethinvestor1Balance.toString())
+      console.log('-----------------------------')
       employeeCount = await approvalMatrix.employeeCount()
     })
     
